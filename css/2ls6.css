@@ -1,0 +1,10 @@
+
+	p{
+		border-style: solid;
+		padding: 10px;
+		width: 50%;
+		font-family: sans-serif;
+		font-weight: italic;
+		font-size: 2vw;
+		color: blue;
+	}
