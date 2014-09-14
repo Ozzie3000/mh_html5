@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Rotatin image 3</title>
+<meta charset="utf-8">
+<style type="text/css">
+	body{
+		background-color: black;
+	}
+	canvas{
+		marging: 0 auto;
+		display: block;
+		padding: 1px;
+	}
+</style>
+</head>
+<body>
+	<h3>Rotating image 3</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+	<canvas id="canvas1" width="620" height="620">
+		Your browser does not support the canvas capabilities. Try upgrading to a new version, using <a href="http://www.firefox.com/">Firefox</a>, or <a href="http://www.chromium.org/">Chromium<a/>.
+	</canvas>
+	<script>
+		var mycanvas = document.getElementById("canvas1");
+		var contx = mycanvas.getContext('2d');
+		contx.lineCap = 'round';
+		contx.strokeStyle = '#ffff00';
+		contx.lineWidth = 4;
+		function turning (){
+			contx.beginPath();
+			contx.moveTo(0,0);
+			// how much to move from center
+			move_num = 2; // change this to get a slightly diff pic
+			// how far to rotate
+			rotate_num = 0.6; // 0 <= rotate_num <= 1
+			// math. convert to radiams
+			rads = rotate_num * 2 * Math.PI;
+			// calculate positioning around center
+			for (i=1; i<=150; i++){
+				distance = i * move_num;
+				turn = i * rads;
+				// position point to draw from
+				x = Math.cos(turn) * distance;
+				y = Math.sin(turn) * distance;
+				// draw line
+				contx.lineTo(x,y);
+			}
+		}
+		contx.translate(contx.canvas.width/2, contx.canvas.height/2);
+		setInterval(
+			function(){
+				contx.clearRect(-contx.canvas.width/2, -contx.canvas.height/2, contx.canvas.width, contx.canvas.height);
+				contx.rotate(0.03); //control rotation speed
+				turning.apply();
+				contx.stroke();
+			}, 10);
+	</script>
+
+<footer>Copyright 2014. Ozzie3000 || <br />Your browser does not support the canvas capabilities. Try upgrading to a new version, using <a href="http://www.firefox.com/">Firefox</a>, or <a href="http://www.chromium.org/">Chromium<a/>.</footer>
+</body>
+</html>
