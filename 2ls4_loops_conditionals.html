@@ -4,12 +4,39 @@
 <title>HTML5 | Loops and Conditionals</title>
 <meta charset="utf-8">
 <meta name="description" content="HTML5 demos" />
+<script type="text/javascript">
+	function loop_and_decide(){
+		for (i=0; i<=10; i++){
+			var node=document.createElement("li");
+			var textnode=document.createTextNode(i);
+			node.appendChild(textnode);
+			document.getElementById("here").appendChild(node);
+			//var textnode = document.createTextNode(i);
+			//node.appendChild(textnode);
+			//document.getElementById("here").appendChild(textnode);
+		}
+		var d = new Date();
+		switch (d.getDay().toString()){
+			case "0":
+				document.write("<br /><br />Today is Sunday");
+				break;
+			case "1":
+				document.write("<br /><br />Today is Monday");
+				break;
+			default:
+				document.write("<br /><br />Today is neither Sunday nor Monday");
+		}
+	}
+</script>
 </head>
 <body>
 	<h3>LS 2.4 Loops and Conditionals</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-
-
+	
+	<input type="button" value="click me" onclick="loop_and_decide();"/>
+	<ul id="here">
+		<li>Add to here:</li>
+	</ul>
 </body>
 </html>
