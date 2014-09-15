@@ -1,1 +1,31 @@
 /* poem maker */
+#header{
+	min-height: 130px;
+	background-color: #fffbbb;
+}
+
+#logo{
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 265px; 
+	background: url(http://www.lcaid.com/images/full/2013/02/20/japanese-woodblock-art-print-wallpapers_Japanese-Woodblock.jpg) 0 0 no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+#tagline{
+	text-align: center;
+	vertical-align: center;
+	height: 35px;
+	font-size: 1.3em;
+	font-size: 1.5vw;
+	font-family: helvetica, sans-serif;
+	background-color: #c3c4c5;
+}
+
+#menu{
+	text-align: center;
+	width: 95%;
+	height: 35px;
+	font-weight: bold;
+}
