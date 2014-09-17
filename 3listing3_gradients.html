@@ -10,8 +10,12 @@
 		background-color: #eeeeee;
 	}
 	#outer{
-		margin-left: 10%;
-		margin-top: 10%;
+		margin-left: 5%;
+		margin-top: 5%;
+		border: 10px solid yellow;
+	}
+	#canvii{
+		//width: 100%; //will inherent 100% of parent width
 	}
 </style>
 </head>
@@ -20,13 +24,18 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 	<div id="outer">
-		<canvas id="canvii">Your browser is no bueno!</canvas>
+		<canvas id="canvii" width="500" height="500">
+			Your browser is no bueno!
+		</canvas>
 	</div>
 	<script type="text/javascript">
-		var mycanvii = document.getElementbyId("canvii");
+		var mycanvii = document.getElementById("canvii");
 		var contex = mycanvii.getContext('2d');
-		var mygradient = contex.createLinearGradient(0,200,400,200);
-		
+		var mygradient = contex.createLinearGradient(0,200,500,200);
+		mygradient.addColorStop("0.0","#ff0000");
+		mygradient.addColorStop("1.0","#0000ff");
+		contex.fillStyle = mygradient;
+		contex.fillRect(0,0,500,500);
 	</script>
 </body>
 </html>
