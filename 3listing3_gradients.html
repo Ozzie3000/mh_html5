@@ -19,7 +19,14 @@
 	<h3>Simple gradients</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
-
-
+	<div id="outer">
+		<canvas id="canvii">Your browser is no bueno!</canvas>
+	</div>
+	<script type="text/javascript">
+		var mycanvii = document.getElementbyId("canvii");
+		var contex = mycanvii.getContext('2d');
+		var mygradient = contex.createLinearGradient(0,200,400,200);
+		
+	</script>
 </body>
 </html>
