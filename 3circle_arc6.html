@@ -7,10 +7,15 @@
 <link rel="stylesheet" href="./css/.css" type="text/css" />
 <style type="text/css">
 	body{ background-color: #eeeeee;}
-	#canviA{ background-color: white; border: 5px red solid;}
+	#canviA{ 
+		background-color: white; 
+		border: 5px red solid;
+		width: 400px;
+		height: 400px;
+	}
 	#outer{
 		margin-left: 45px;
-		margin-right: 45px;
+		margin-top: 45px;
 	}
 </style>
 </head>
@@ -19,6 +24,28 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
+	<div id="outer">
+		<canvas id="canviA">you're broswer sucks</canvas>
+	</div>
 
+<script type="text/javascript">
+	var mycanvi = document.getElementById("canviA");
+	var contex = mycanvi.getContext("2d");
+	//lets draw a circle
+	contex.beginPath();
+	contex.arc(200, 100, 50, 0, Math.PI * 2, true);
+	contex.closePath();
+	contex.lineWidth = "4";
+	contex.strokeStyle = "black";
+	contex.stroke();
+
+	//lets draw a semi-circle
+	contex.beginPath();
+	contex.arc(200, 100, 100, 0, Math.PI, true);
+	contex.closePath();
+	contex.lineWidth = "2";
+	contex.strokeStyle = "red";
+	contex.stroke();
+</script>
 </body>
 </html>
