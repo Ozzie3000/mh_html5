@@ -24,7 +24,28 @@
 <script type="text/javascript">
 	var mycanvii = document.getElementById("canviA");
 	var contex = mycanvii.getContext("2d");
-	contex.lineWidth = ;
+	contex.lineWidth = "4";
+	contex.fillStyle = 'rgb(33,33,33)';
+	contex.beginPath();
+	//lets draw a house
+	//stroke it not fill it
+	draw(40,40,40,360,360,360,360,40,40,40);
+	draw(100,100,100,180,180,180,180,100,100,100);
+	draw(300,100,300,180,220,180,220,100,300,100);
+	contex.stroke();
+	contex.closePath();
+	//draw window frames 
+	contex.beginPath();
+	windowframes(100,140,180,140,100,140,180);
+	windowframes(220,140,300,140,260,180,260,100);
+	contex.stroke();
+	contex.closePath();
+	//draw door and fill it
+	contex.beginPath();
+	draw(160,360,160,260,240,260,240,360,160,360);
+	contex.fill();
+	contex.closePath();
+	draw
 </script>
 </body>
 </html>
