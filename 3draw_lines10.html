@@ -24,7 +24,7 @@
 <script type="text/javascript">
 	var mycanvii = document.getElementById("canviA");
 	var contex = mycanvii.getContext("2d");
-	contex.lineWidth = "4";
+	contex.lineWidth = 4;
 	contex.fillStyle = 'rgb(33,33,33)';
 	contex.beginPath();
 	//lets draw a house
@@ -45,7 +45,20 @@
 	draw(160,360,160,260,240,260,240,360,160,360);
 	contex.fill();
 	contex.closePath();
-	draw
+	//draw doorknob in white
+	contex.beginPath();
+	contex.arc(220,310,5,0,Math.PI * 2,true);
+	contex.closePath();
+	//change colro to white and fill
+	contex.fillStyle="#ffffff";
+	contex.fill();
+	function draw(m1,m2,l1,l2,l3,l4,l5,l6,l7,l8){
+		contex.moveTo(m1,m2);
+		contex.lineTo(l1,l2);
+		contex.moveTo(m3,m4);
+		contex.lineTo(l3,l4);
+	}
+	function windowframes(m1,m2,l1,l2.m3,m4)
 </script>
 </body>
 </html>
