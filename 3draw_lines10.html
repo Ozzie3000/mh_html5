@@ -19,7 +19,7 @@
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 
-<canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
+	<canvas id="canviA" width="420" height="420">Your browser needs an upgrade</canvas>
 
 <script type="text/javascript">
 	var mycanvii = document.getElementById("canviA");
@@ -29,36 +29,43 @@
 	contex.beginPath();
 	//lets draw a house
 	//stroke it not fill it
-	draw(40,40,40,360,360,360,360,40,40,40);
-	draw(100,100,100,180,180,180,180,100,100,100);
-	draw(300,100,300,180,220,180,220,100,300,100);
+	draw (40,40,40,360,360,360,360,40,40,40);
+	draw (100,100,100,180,180,180,180,100,100,100);
+	draw (300,100,300,180,220,180,220,100,300,100);
 	contex.stroke();
 	contex.closePath();
 	//draw window frames 
 	contex.beginPath();
-	windowframes(100,140,180,140,100,140,180);
-	windowframes(220,140,300,140,260,180,260,100);
+	windowframes (100,140,180,140,100,140,180);
+	windowframes (220,140,300,140,260,180,260,100);
 	contex.stroke();
 	contex.closePath();
 	//draw door and fill it
 	contex.beginPath();
-	draw(160,360,160,260,240,260,240,360,160,360);
+	draw (160,360,160,260,240,260,240,360,160,360);
 	contex.fill();
 	contex.closePath();
 	//draw doorknob in white
 	contex.beginPath();
-	contex.arc(220,310,5,0,Math.PI * 2,true);
+	contex.arc (220,310,5,0,Math.PI * 2,true);
 	contex.closePath();
 	//change colro to white and fill
 	contex.fillStyle="#ffffff";
 	contex.fill();
-	function draw(m1,m2,l1,l2,l3,l4,l5,l6,l7,l8){
+	function draw (m1,m2,l1,l2,l3,l4,l5,l6,l7,l8){
+		contex.moveTo(m1,m2);
+		contex.lineTo(l1,l2);
+		contex.lineTo(l3,l4);
+		contex.lineTo(l5,l6);
+		contex.lineTo(l7,l8);
+	}
+	function windowframes (m1,m2,l1,l2,m3,m4,l3,l4){
 		contex.moveTo(m1,m2);
 		contex.lineTo(l1,l2);
 		contex.moveTo(m3,m4);
 		contex.lineTo(l3,l4);
 	}
-	function windowframes(m1,m2,l1,l2.m3,m4)
+
 </script>
 </body>
 </html>
