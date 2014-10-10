@@ -18,17 +18,30 @@
 	<h3>3.12 Text with lines</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
+	<input type="button" id="punish" class="on" value="show/hide sentence" onclick="punishment();"/>
+	<br>
 
 <canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
 
+<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
 <script type="text/javascript">
+	$(function(){
+		if($("#punish").hasClass("on")){
+			alert("yes");
+		}else{
+			alert("no");
+		}
+	});
 	var mycanvii = document.getElementById("canviA");
 	var contex = mycanvii.getContext("2d");
 		contex.font = "1em sans-serif";
 		contex.fillStyle = "rgb(0,0,0)";
-	for(i=10; i<=480; i=(i+40)){
+	function punishment(){
+		for(i=10; i<=480; i=(i+40)){
 		contex.fillText("Bam!!! I just appeared from thin air", 10, i);
 	} 
+	}
+	
 </script>
 </body>
 </html>
