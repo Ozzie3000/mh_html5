@@ -7,7 +7,7 @@
 <style type="text/css">
 	body{ background-color: #eeeeee;}
 	#canviA{ 
-		background-color: yellow; 
+		background-color: black; 
 		border: 5px blue solid;
 		margin-left: 40px;
 		margin-top: 40px;
@@ -24,25 +24,26 @@
 <script type="text/javascript">
 	var mycanvii = document.getElementById("canviA");
 	var contex = mycanvii.getContext("2d");
-		contex.fillStyle = "rgb(0,0,0)";
-	letter("T", 10);
-	letter("h", 20);
-	letter("i", 30);
-	letter("s", 40);
-	letter("I", 70);
+		contex.font = "1.5em sans-serfi"
+		contex.fillStyle = "#00cc00";
+	letter("T", 20);
+	letter("h", 40);
+	letter("i", 60);
 	letter("s", 80);
-	letter("T", 110);
-	letter("h", 120);
-	letter("e", 130);
-	letter("M", 160);
-	letter("a", 170);
-	letter("t", 180);
-	letter("r", 190);
-	letter("i", 200);
-	letter("x", 210);
+	letter("I", 120);
+	letter("s", 140);
+	letter("T", 180);
+	letter("h", 200);
+	letter("e", 220);
+	letter("M", 260);
+	letter("a", 280);
+	letter("t", 300);
+	letter("r", 320);
+	letter("i", 340);
+	letter("x", 360);
 
-	function scroll(letter, position){
-		contex.fillText(scroll, 200, position);
+	function letter(thingy, position){
+		contex.fillText(thingy, 240, position);
 	}
 
 </script>
