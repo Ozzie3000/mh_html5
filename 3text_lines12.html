@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Text with lines</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ background-color: #eeeeee;}
+	#canviA{ 
+		background-color: yellow; 
+		border: 5px blue solid;
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+<body>
+	<h3>3.12 Text with lines</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+<canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
+
+<script type="text/javascript">
+	var mycanvii = document.getElementById("canviA");
+	var contex = mycanvii.getContext("2d");
+		contex.font = "1em sans-serif";
+		contex.fillStyle = "rgb(0,0,0)";
+	for(i=10; i<=480; i=(i+40)){
+		contex.fillText("Bam!!! I just appeared from thin air", 10, i);
+	} 
+</script>
+</body>
+</html>
