@@ -64,6 +64,15 @@
 				//instantiate the new brush
 				brush = new paintbrush();
 				//attach the mousedown, mousemove, and mouseup event listeners
+				mycanvii.addEventListener('mousedown', ev_canvas, false);
+				mycanvii.addEventListener('mousemove', ev_canvas, false);
+				mycanvii.addEventListener('mouseup', ev_canvas, false);
+			}
+			function paintbrush(){
+				var brush = this;
+				this.started = false;
+				//a color?
+				
 			}
 		})
 	}
