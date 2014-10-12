@@ -82,6 +82,18 @@
 			contex.beginPath();
 			rand_linestart = (Math.floor(Math.random()*500));
 			rand_linewidth = (Math.floor(Math.random()*20));
+			if (rand_linestart < v_line){
+				v_line = rand_linestart - (rand_linewidth/2);
+			}
+			if (i==1){
+				v_line_1 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==2){
+				v_line_2 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==3){
+				v_line_3 = rand_linestart + (rand_linewidth/2);
+			}
 		}
 	}
 </script>
