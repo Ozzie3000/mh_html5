@@ -56,7 +56,16 @@
 <script type="text/javascript">
 //now for the event listeners
 	if(window.addEventListener){
-
+		window.addEventListener('load', function(){
+			var mycanvii = document.getElementById('canviA');
+			var contex = mycanvii.getContext('2d');
+			var brush;
+			function init (){
+				//instantiate the new brush
+				brush = new paintbrush();
+				//attach the mousedown, mousemove, and mouseup event listeners
+			}
+		})
 	}
 </script>
 </body>
