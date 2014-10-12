@@ -42,7 +42,12 @@
 <script type="text/javascript">
 	var mycanvii = document.getElementById("canviA");
 	var contex = mycanvii.getContext("2d");
-	contex. = ;
+	function create_image(){
+		mycanvii.width = mycanvii.width; //clear the canvas for w/e reason
+		contex.strokeStyle = "rgb(0,0,0)";
+		var h = document.getElementById("h_border_count").value;
+		var v = document.getElementById("v_border_count").value;
+	}
 </script>
 </body>
 </html>
