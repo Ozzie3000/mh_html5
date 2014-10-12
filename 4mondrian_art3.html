@@ -94,7 +94,13 @@
 			if (i==3){
 				v_line_3 = rand_linestart + (rand_linewidth/2);
 			}
+			contex.lineWidth = rand_linewidth;
+			contex.moveTo (rand_linestart, 0);
+			contex.lineTo (rand_linestart, 500);
+			contex.closePath();
+			contex.stroke();
 		}
+		//fill in time for the rectangle
 	}
 </script>
 </body>
