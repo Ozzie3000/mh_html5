@@ -105,7 +105,9 @@
 		contex.fillRect(0,0,v_line,h_line);
 		h_max = Math.max(h_line_1,h_line_2,h_line_3);
 		v_max = Math.max(v_line_1,v_line_2,v_line_3);
-	}
+		contex.fillStyle = "rgb(255,0,0)";
+		contex.fillRect(v_max, h_max,500,500);
+	}// end of function
 </script>
 </body>
 </html>
