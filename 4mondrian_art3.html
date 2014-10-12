@@ -18,8 +18,18 @@
 	<h3>4.3 Mondrianish art</h3>
 	<input type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
+	<h4>Choose horizontal and vertical values underneath the canvas then click the canvas</h4>
+	<canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
+	<form>
+		Choose how many horizontal lines:
+		<select id="h_border_count" name="h_border_count">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2" selected="selected">2</option>
+			<option value="3" >3</option>
+		</select>
+	</form>
 
-<canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
 
 <script type="text/javascript">
 	var mycanvii = document.getElementById("canviA");
