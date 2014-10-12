@@ -47,6 +47,37 @@
 		contex.strokeStyle = "rgb(0,0,0)";
 		var h = document.getElementById("h_border_count").value;
 		var v = document.getElementById("v_border_count").value;
+		contex.lineWidth = "2";
+		h_line = 500;
+		v_line_1 = 0;
+		v_line_2 = 0;
+		v_line_3 = 0;
+		h_line_1 = 0;
+		h_line_2 = 0;
+		h_line_3 = 0;
+		for (i=1; i<=h; i++){
+			contex.beginPath();
+			rand_linestart = (Math.floor(Math.random()*500));
+			rand_linewidth = (Math.floor(Math.random()*20));
+			if (rand_linestart < h_line){
+				h_line = rand_linestart- (rand_linewidth/2);
+			}
+			if (i==1){
+				h_line_1 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==2){
+				h_line_2 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==3){
+				h_line_3 = rand_linestart + (rand_linewidth/2);
+			}
+			contex.lineWidth = rand_linewidth;
+			contex.moveTo (0, rand_linestart);
+			contex.lineTo (500, rand_linestart);
+			contex.closePath();
+			contex.stroke();
+		}
+		v_line=500;
 	}
 </script>
 </body>
