@@ -22,9 +22,27 @@
 <canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
 
 <script type="text/javascript">
+	var z = 10;
+	var direction = 1;
 	var mycanvii = document.getElementById("canviA");
 	var contex = mycanvii.getContext("2d");
-	contex. = ;
+	var mygradient = contex.createRadialGradient(200,200,10,300,300,300);
+
+	function grady(){
+		if (z==0){
+			direction = 1;
+		}
+		if (z==300){
+			direction = 0;
+		}
+		if (direction==1){
+			z = (z+10);
+		}
+		if (direction==0){
+			z = (z-10);
+		}
+		mygradient = contex.createRadialGradient(200,200,10,300,z,300);
+	}
 </script>
 </body>
 </html>
