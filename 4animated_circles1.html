@@ -27,13 +27,21 @@
 	contex.lineWidth = "3";
 
 	function circles(){
-		for (i=0; a<=500; a=a+30){
-			for (a=0; a<=400; a=a+30){
+		for (i=0; i<=500; i=i+30){
+			for (a=0; a<=500; a=a+30){
 				contex.beginPath();
-				contex.arc(i, a, 10, 0)
+				contex.arc(i, a, 10, 0, Math.PI*2, true);
+				randomcolor1 = (Math.floor(Math.random()*255));
+				randomcolor2 = (Math.floor(Math.random()*255));
+				randomcolor3 = (Math.floor(Math.random()*255));
+				contex.strokeStyle = "rgb(" +randomcolor1+","+randomcolor2+","+randomcolor3+")";
+				contex.closePath();
+				contex.stroke();
 			}
 		}
 	}
+	//let us choose a speed for the animation
+	setInterval(circles, 200);
 </script>
 </body>
 </html>
