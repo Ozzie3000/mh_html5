@@ -42,7 +42,12 @@
 			z = (z-10);
 		}
 		mygradient = contex.createRadialGradient(200,200,10,300,z,300);
+		mygradient.addColorStop("0","#000000");
+		mygradient.addColorStop("1.0","#00ff00");
+		contex.fillStyle = mygradient;
+		contex.fillRect(0,0,400,400);
 	}
+	setInterval(grady, 100);
 </script>
 </body>
 </html>
