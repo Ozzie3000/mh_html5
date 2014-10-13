@@ -94,10 +94,36 @@
 						contex.lineTo(ev._x, ev._y);
 						contex.stroke();
 					}
+				};
+				//This is called when you release the mouse button
+				this.mouseup = function (ev){
+					if (brush.started){
+						brush.started = false;
+					}
+				};
+			}
+			//Determine the mouse position relative to the canvas
+			function ev_canvas (ev){
+				if (ev.layerX || ev.layerX == 0){
+					//firefox
+					ev._x = ev.layerX;
+					ev._y = ev.layerY;
+				}else if (ev.offsetX || ev.offsetX == 0){
+					//opera
+					ev._x = ev.layerX;
+					ev._y = ev.layerY;
+				}
+				//call the event handler
+				var func = brush[ev.type];
+				if (func){
+					func(ev);
 				}
 			}
-		})
-	}
+			init();
+		}, false);}
+		function newcolor(color){
+			document.getElementById('colorchoice').innerHTML=color;
+		}
 </script>
 </body>
 </html>
