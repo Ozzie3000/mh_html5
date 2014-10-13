@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Audio tags with fallbacks and no controls</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body {
+		color: white;
+		font-family: sans-serif;
+		background-color: #eeeeee; 
+		background: url("..//pictures/background-wallpapers-60.png");
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	h3{ color: white; font-family: sans-serif;}
+
+	#audio_1{
+		border-style: ridge;
+		border-color: #c3eefd;
+		border-width: 15px;
+		background: url("http://www.graphicpanic.com/images/blue-gradient-background.jpg");
+	}
+</style>
+</head>
+<body>
+	<h3>6.3 Audio tags with fallbacks and no controls</h3>
+	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<br /><br />
+	
+	<div style="margin-left:40px;">
+		<audio controls loop id="audio_1">
+			<source src="..//audio/romantic_guitar.mp3">
+			<source src="..//audio/romantic_guitar.wma">
+			<source src="..//audio/romantic_guitar.ogg">
+			<source src="..//audio/romantic_guitar.wav">
+			Your browser needs an upgrade
+		</audio>
+	</div>
+
+<script type="text/javascript">
+	function playmusic
+</script>
+</body>
+</html>
