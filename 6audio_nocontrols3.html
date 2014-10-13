@@ -25,13 +25,13 @@
 	}
 </style>
 </head>
-<body>
+<body onload="playmusic()">
 	<h3>6.3 Audio tags with fallbacks and no controls</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 	
 	<div style="margin-left:40px;">
-		<audio controls loop id="audio_1">
+		<audio loop id="audio_1">
 			<source src="..//audio/romantic_guitar.mp3">
 			<source src="..//audio/romantic_guitar.wma">
 			<source src="..//audio/romantic_guitar.ogg">
@@ -41,7 +41,9 @@
 	</div>
 
 <script type="text/javascript">
-	function playmusic
+	function playmusic(){
+		document.getElementById("audio_1").play();
+	}
 </script>
 </body>
 </html>
