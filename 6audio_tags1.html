@@ -6,6 +6,8 @@
 <meta name="description" content="HTML5 demos" />
 <style type="text/css">
 	body {
+		color: white;
+		font-family: sans-serif;
 		background-color: #eeeeee; 
 		background: url("..//pictures/background-wallpapers-60.png");
 		background-attachment: fixed;
@@ -19,17 +21,31 @@
 		border-style: ridge;
 		border-color: #c3eefd;
 		border-width: 15px;
-		background: url();
+		background: url("http://www.graphicpanic.com/images/blue-gradient-background.jpg");
+	}
+	#audio_2 {
+		border-style: dotted;
+		border-color: #00ff00;
+		border-width: 5px;
+		width: 333px;
+	}
+	audio_3{
+		background-color: red;
+		width: 555px;
 	}
 </style>
 </head>
 <body>
-	<div class="main_wrapper">
 	<h3>6.1 Audio tags</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 	
-
+	<div style="margin-left:40px;">
+		<audio controls loop id="audio_1" src="..//audio/romantic_guitar.mp3">
+			Your browser needs an upgrade
+		</audio>
+		<br /><br />
+		<audio controls loop id="audio_2" src="..//audio/romantic_guitar.mp3"></audio>
 
 awtw4t
 	</div>
