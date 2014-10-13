@@ -72,7 +72,29 @@
 				var brush = this;
 				this.started = false;
 				//a color?
-				
+				var color = document.getElementById('colorchoice').innerHTML;
+				contex.strokeStyle = 'rgb(' + color + ')';
+				//this mousedown allows the brush to start drawing
+				this.mousedown = function (ev){
+					brush.started = true;
+					contex.beginPath();
+					contex.moveTo(ev._x, ev._y);
+					//by moving the line by one pixel a dot is put on the canvas
+					contex.moveTo(ev._x+1, ev._y+1);
+					contex.stroke();
+				};
+				//this movemove allows the brush to continue to draw
+				this.mousemove = function (ev){
+					if (brush.started){
+						//a color?
+						var color = document.getElementById('colorchoice').innerHTML;
+						var linewidth = document.getElementById('linewidth').value;
+						contex.strokeStyle = 'rgb(' + color + ')';
+						contex.linewidth = linewidth;
+						contex.lineTo(ev._x, ev._y);
+						contex.stroke();
+					}
+				}
 			}
 		})
 	}
