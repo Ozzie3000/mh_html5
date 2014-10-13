@@ -15,11 +15,16 @@
 </head>
 <body>
 	<h3>5.5 Using events with video tags</h3>
-	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
 	<p>CLick the video to play it, and double click it to pause it.</p>
-	<div></div>
+	<div>
+		<video id="vid_1" controls width="720" height="360" onclick="playme()">
+			<source src="http://media.w3.org/2010/05/sintel/trailer.mp4
+">
+		</video>
+	</div>
 
 <script type="text/javascript">
 
