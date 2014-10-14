@@ -13,7 +13,7 @@
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
-	h3{ color: white; font-family: sans-serif;}
+	h3,h4{ color: white; font-family: sans-serif; text-align: center;}
 	#audio_1{
 		border-style: ridge;
 		border-color: #c3eefd;
@@ -27,7 +27,14 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-
+	<div id="thank"></div>
+	<br />
+	<audio controls id="audio_1" onplay="showpicture()" onpause="hidepicture()" onended="thank_them()">
+		<source src="..//audio/romantic_guitar.mp3">
+		<source src="..//audio/romantic_guitar.wma">
+		<source src="..//audio/romantic_guitar.ogg">
+		<source src="..//audio/romantic_guitar.wav">
+	</audio>
 
 <script type="text/javascript">
 	function showpicture(){
@@ -35,6 +42,9 @@
 	}
 	function hidepicture(){
 		document.getElementById("musicstaff").style.visibility="hidden";
+	}
+	function thank_them(){
+		document.getElementById("thank").innerHTML="<h4>Arigatou gozaimasu!<h4>"
 	}
 </script>
 </body>
