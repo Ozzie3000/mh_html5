@@ -32,21 +32,21 @@
 	<h3>Click the picture to start the song.<br />Double click the picture to pause the song.</h3>
 	<div id="thank"></div>
 	<br />
-	<audio controls id="audio_1" onplay="showpicture()" onpause="hidepicture()" onended="thank_them(), ">
+	<audio controls id="audio_1" onended="thank_them()">
 		<source src="..//audio/romantic_guitar.mp3">
 		<source src="..//audio/romantic_guitar.wma">
 		<source src="..//audio/romantic_guitar.ogg">
 		<source src="..//audio/romantic_guitar.wav">
 	</audio>
 	<br /><br />
-	<img id="musicstaff" src="http://www.rcguitarstudio.com/wp-content/uploads/2014/07/music-notes-.jpg" style="visibility:hidden;">
+	<img id="musicstaff" src="http://www.rcguitarstudio.com/wp-content/uploads/2014/07/music-notes-.jpg" onclick="start_song()" ondblclick="pause_song()">
 
 <script type="text/javascript">
-	function showpicture(){
-		document.getElementById("musicstaff").style.visibility="visible";
+	function start_song(){
+		document.getElementById("audio_1").play();
 	}
-	function hidepicture(){
-		document.getElementById("musicstaff").style.visibility="hidden";	
+	function pause_song(){
+		document.getElementById("audio_1").pause();
 	}
 	function thank_them(){
 		document.getElementById("thank").innerHTML="<h4>Arigatou gozaimasu!<h4>"
