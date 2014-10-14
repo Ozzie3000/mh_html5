@@ -32,7 +32,7 @@
 
 	<div id="thank"></div>
 	<br />
-	<audio controls id="audio_1" onplay="showpicture()" onpause="hidepicture()" onended="thank_them()">
+	<audio controls id="audio_1" onplay="showpicture()" onpause="hidepicture()" onended="thank_them(), ">
 		<source src="..//audio/romantic_guitar.mp3">
 		<source src="..//audio/romantic_guitar.wma">
 		<source src="..//audio/romantic_guitar.ogg">
@@ -46,7 +46,7 @@
 		document.getElementById("musicstaff").style.visibility="visible";
 	}
 	function hidepicture(){
-		document.getElementById("musicstaff").style.visibility="hidden";
+		document.getElementById("musicstaff").style.visibility="hidden";	
 	}
 	function thank_them(){
 		document.getElementById("thank").innerHTML="<h4>Arigatou gozaimasu!<h4>"
