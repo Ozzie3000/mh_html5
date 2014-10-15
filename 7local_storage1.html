@@ -19,7 +19,7 @@
 </style>
 <script type="text/javascript">
 	function store_task(task){
-		var taskdetail = document.getElementById("task").value;
+		var taskdetail = document.getElementById(task).value;
 		localStorage.setItem(task, taskdetail);
 	}
 	function get_task(task){
