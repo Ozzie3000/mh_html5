@@ -23,7 +23,11 @@
 		localStorage.setItem(task, taskdetail);
 	}
 	function get_task(task){
-		document.getElementById("task").value = localStorage.getItem(task);
+		document.getElementById(task).value = localStorage.getItem(task);
+	}
+	function clear_task(task){
+		localStorage.removeItem(task);
+		document.getElementById(task).value = "";
 	}
 </script>
 </head>
