@@ -40,6 +40,7 @@
 		font-size: 1.6em;
 		visibility: hidden;
 		background-color: blue;
+		opacity: 0.5;
 	}
 	#secretdiv2{
 		position: absolute;
@@ -50,6 +51,7 @@
 		font-size: 1.6em;
 		visibility: hidden;
 		background-color: cyan;
+		opacity: 0.5;
 	}
 </style>
 </head>
@@ -60,7 +62,7 @@
 
 	<div id="dropoff" ondrop="drop(this, event)" ondragenter="enter(event)" ondragover="return false"></div>
 
-	<div id="box" draggable="trues"></div>
+	<div id="box" draggable="true"></div>
 
 	<div id="secretdiv1">I appear when the small box is enters the big box.</div>
 
@@ -69,6 +71,16 @@
 <script type="text/javascript">
 	function drag(drag_object, e){
 		e.dataTransfer.setData('Text', drag_object.id);
+	}
+	function drop(drop_target, e){
+		var id = e.dataTransfer.getData('Text');
+		drop_target.appendChild(document.getElementById(id));
+		document.getElementById('secretdiv2').style.visibility="visible";
+		e.preventDefault();
+	}
+	function enter(e){
+		document.getElementById("secretdiv1").style.visibility="visible";
+		return true;
 	}
 </script>
 </body>
