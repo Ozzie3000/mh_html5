@@ -51,7 +51,7 @@
 		e.dataTransfer.effectAllowed="move";
 		e.dataTransfer.setData("Text", drag_object.id);
 	}
-	function drop(drop_test, e){
+	function drop(drop_target, e){
 		var id = e.dataTransfer.getData("Text");
 		drop_target.appendChild(document.getElementById(id));
 		e.preventDefault();
