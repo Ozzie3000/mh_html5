@@ -33,7 +33,7 @@
 		document.getElementById("divfruit" + divnum).innerHTML='<img src="' + the_pic + '">';
 	}
 	function clear_pic() {
-		for (i=1; 1<=4; i++){
+		for (i=1; i<=4; i++){
 			localStorage.removeItem('fruit' + i);
 			document.getElementById('divfruit' + i).innerHTML="";
 		}
@@ -92,28 +92,26 @@
 		var fruit_3 = localStorage.getItem("fruit_3");
 		var fruit_4 = localStorage.getItem("fruit_4");
 		if (fruit_1 == null){
-			document.getElementById("divfruit_1").innerHTML='<img src="">';
+			document.getElementById("divfruit_1").innerHTML='<img src="http://farm6.staticflickr.com/5012/5427691534_4c0420cdc9_s.jpg">';
 		} else {
 			document.getElementById("divfruit_1").innerHTML='<img src="' + fruit_1 + '">';
 		}
 		if (fruit_2 == null){
-			document.getElementById("divfruit_2").innerHTML='<img src="">';
+			document.getElementById("divfruit_2").innerHTML='<img src="http://img1.wikia.nocookie.net/__cb20090626021601/mafiawars/images/a/a0/Standard_75x75_collect_fruit_banana_01.gif">';
 		} else {
 			document.getElementById("divfruit_2").innerHTML='<img src="' + fruit_2 + '">';
 		}
 		if (fruit_3 == null){
-			document.getElementById("divfruit_3").innerHTML='<img src="">';
+			document.getElementById("divfruit_3").innerHTML='<img src="http://remus.org/wp-content/uploads/2013/06/howard-strawberry-farm.jpg">';
 		} else {
 			document.getElementById("divfruit_3").innerHTML='<img src="' + fruit_3 + '">';
 		}
 		if (fruit_4 == null){
-			document.getElementById("divfruit_4").innerHTML='<img src="">';
+			document.getElementById("divfruit_4").innerHTML='<img src="http://farm6.staticflickr.com/5012/5427691534_4c0420cdc9_s.jpg">';
 		} else {
 			document.getElementById("divfruit_4").innerHTML='<img src="' + fruit_4 + '">';
 		}
 	</script>
 	</div>
-
-
 </body>
 </html>
