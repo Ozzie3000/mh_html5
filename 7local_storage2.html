@@ -20,16 +20,24 @@
 	#divfruit_3{ position: absolute; left: 400px; top: 175px;}
 	#divfruit_4{ position: absolute; left: 475px; top: 175px;}
 </style>
+<script type="text/javascript">
+	function store_pic(pic, divnum){
+		var pic_detail = document.getElementById(pic).value;
+		localStorage.setItem(pic, pic_detail);
+		document.getElementById("divfruit" + divnum).innerHTML='<img src="' + pic_detail + '">';
+	}
+	function get_pic(divnum){
+		
+	}
+</script>
 </head>
 <body>
 	<h3 style="margin-bottom:2px;">7.2 Fruit arrangement with local storage</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
+	<div></div>
 
 
-<script type="text/javascript">
-
-</script>
 </body>
 </html>
