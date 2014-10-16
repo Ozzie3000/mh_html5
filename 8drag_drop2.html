@@ -48,6 +48,8 @@
 		top: 150px;
 		left: 200px;
 		font-size: 1.6em;
+		visibility: hidden;
+		background-color: cyan;
 	}
 </style>
 </head>
@@ -60,9 +62,14 @@
 
 	<div id="box" draggable="trues"></div>
 
-	<div id="secretdiv1">I appear when the small box is dropped.</div>
-<script type="text/javascript">
+	<div id="secretdiv1">I appear when the small box is enters the big box.</div>
 
+	<div id="secretdiv2">I appear when teh small box is dropped.</div>
+
+<script type="text/javascript">
+	function drag(drag_object, e){
+		e.dataTransfer.setData('Text', drag_object.id);
+	}
 </script>
 </body>
 </html>
