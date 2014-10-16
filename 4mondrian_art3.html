@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | 4.3 Mondrianish art</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ background-color: #eeeeee;}
+	#canviA{ 
+		background-color: white; 
+		border: 20px blue solid;
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+<body>
+	<h3>4.3 Mondrianish art</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+	<h4>Choose horizontal and vertical values underneath the canvas then click the canvas</h4>
+	<canvas id="canviA" width="500" height="500" onclick="create_image()">Your browser needs an upgrade</canvas>
+	<form>
+		Choose how many horizontal lines:
+		<select id="h_border_count" name="h_border_count">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2" selected="selected">2</option>
+			<option value="3" >3</option>
+		</select>
+		<br />
+		Choose how many vertical lines:
+		<select id="v_border_count" name="v_border_count">
+			<option value="0">0</option>
+			<option value="1">1</option>
+			<option value="2" selected="selected">2</option>
+			<option value="3" >3</option>
+		</select>
+	</form>
+
+
+<script type="text/javascript">
+	var mycanvii = document.getElementById("canviA");
+	var contex = mycanvii.getContext("2d");
+	function create_image(){
+		mycanvii.width = mycanvii.width; //clear the canvas for w/e reason
+		contex.strokeStyle = "rgb(0,0,0)";
+		var h = document.getElementById("h_border_count").value;
+		var v = document.getElementById("v_border_count").value;
+		contex.lineWidth = "2";
+		h_line = 500;
+		v_line_1 = 0;
+		v_line_2 = 0;
+		v_line_3 = 0;
+		h_line_1 = 0;
+		h_line_2 = 0;
+		h_line_3 = 0;
+		for (i=1; i<=h; i++){
+			contex.beginPath();
+			rand_linestart = (Math.floor(Math.random()*500));
+			rand_linewidth = (Math.floor(Math.random()*20));
+			if (rand_linestart < h_line){
+				h_line = rand_linestart- (rand_linewidth/2);
+			}
+			if (i==1){
+				h_line_1 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==2){
+				h_line_2 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==3){
+				h_line_3 = rand_linestart + (rand_linewidth/2);
+			}
+			contex.lineWidth = rand_linewidth;
+			contex.moveTo (0, rand_linestart);
+			contex.lineTo (500, rand_linestart);
+			contex.closePath();
+			contex.stroke();
+		}
+		v_line=500;
+		for (i=1; i<=v; i++){
+			contex.beginPath();
+			rand_linestart = (Math.floor(Math.random()*500));
+			rand_linewidth = (Math.floor(Math.random()*20));
+			if (rand_linestart < v_line){
+				v_line = rand_linestart - (rand_linewidth/2);
+			}
+			if (i==1){
+				v_line_1 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==2){
+				v_line_2 = rand_linestart + (rand_linewidth/2);
+			}
+			if (i==3){
+				v_line_3 = rand_linestart + (rand_linewidth/2);
+			}
+			contex.lineWidth = rand_linewidth;
+			contex.moveTo (rand_linestart, 0);
+			contex.lineTo (rand_linestart, 500);
+			contex.closePath();
+			contex.stroke();
+		}
+		//fill in time for the rectangle
+		contex.fillStyle = "rgb(255,255,0)";
+		contex.fillRect(0,0,v_line,h_line);
+		h_max = Math.max(h_line_1,h_line_2,h_line_3);
+		v_max = Math.max(v_line_1,v_line_2,v_line_3);
+		contex.fillStyle = "rgb(255,0,0)";
+		contex.fillRect(v_max, h_max,500,500);
+	}// end of function
+</script>
+</body>
+</html>

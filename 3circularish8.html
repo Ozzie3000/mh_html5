@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Circularish</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ background-color: #eeeeee;}
+	#canviA{ 
+		background-color: white; 
+		border: 5px red solid;
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+<body>
+	<h3>3.8 VaringCircular shapes</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<canvas id="canviA" width="500" height="500">Yo, get a new browser already</canvas>
+
+<script type="text/javascript">
+	var mycanvii = document.getElementById("canviA");
+	var contex = mycanvii.getContext("2d");
+	contex.lineWidth = "4"
+	contex.strokeStyle = "black"
+	contex.beginPath();
+	contex.arc(50, 50, 30, 0, Math.PI * 2, true);
+	contex.closePath()
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(100, 100, 30, 0, Math.PI * 1.5, true);
+	contex.closePath();
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(150, 150, 30, 0, Math.PI * 1, true);
+	contex.closePath();
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(200, 200, 30, 0, Math.PI * 0.5, true);
+	contex.closePath();
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(250, 250, 30, 1, Math.PI * 2, true);
+	contex.closePath();
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(300, 300, 30, 1.5, Math.PI * 2, true);
+	contex.closePath();
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(350, 350, 30, 2, Math.PI * 2, true);
+	contex.closePath();
+	contex.stroke();
+	contex.beginPath();
+	contex.arc(400, 400, 30, 2.5, Math.PI * 2, true);
+	contex.closePath();
+	contex.stroke();	
+</script>
+</body>
+</html>

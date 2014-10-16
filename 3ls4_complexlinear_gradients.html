@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Simple gradients</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<link rel="stylesheet" href="./css/.css" type="text/css" />
+<style type="text/css">
+	body{
+		background-color: #eeeeee;
+	}
+	#outer{
+		margin-left: 5%;
+		margin-top: 5%;
+		border: 10px solid yellow;
+	}
+	#canvii{
+		width: 100%; //will inherent 100% of parent width
+	}
+</style>
+</head>
+<body>
+	<h3>Simple gradients</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+	<div id="outer">
+		<canvas id="canvii" width="500" height="500">
+			Your browser is no bueno!
+		</canvas>
+	</div>
+	<script type="text/javascript">
+		var mycanvii = document.getElementById("canvii");
+		var contex = mycanvii.getContext('2d');
+		var mygradient = contex.createLinearGradient(0,200,500,200);
+		mygradient.addColorStop("0.0","#ff0000");
+		mygradient.addColorStop("0.25","cyan");
+		mygradient.addColorStop("0.50","blue");
+		mygradient.addColorStop("0.75","purple");
+		mygradient.addColorStop("1.0","black");
+		contex.fillStyle = mygradient;
+		contex.fillRect(0,0,500,500);
+	</script>
+</body>
+</html>

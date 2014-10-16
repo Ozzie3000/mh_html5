@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Drag and Drop</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ 
+		background-color: #eeeeee;
+		background: url("..//pictures/background-wallpapers-60.png");
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	h3{ color: white; font-family: sans-serif; text-align: center;}
+	#dropoff{
+		position: absolute;
+		width: 300px;
+		height: 200px;
+		top: 200px;
+		left: 400px;
+		background-color: #ededed;
+		border-style: solid;
+		border-width: thin;
+	}
+	#box{
+		width: 100px;
+		height: 100px;
+		background-color: #00efef;
+		border-style: solid;
+		border-width: thin;
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<h3>8.1 Drag and Drop</h3>
+	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<br /><br />
+
+	<div id="dropoff" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false"></div>
+
+	<div id="box" draggable="true" ondragstart="drag(this, event)" ondragend="return false"></div>
+
+<script type="text/javascript">
+	function drag(drag_object, e){
+		e.dataTransfer.dropEffect="move";
+		e.dataTransfer.effectAllowed="move";
+		e.dataTransfer.setData("Text", drag_object.id);
+	}
+	function drop(drop_target, e){
+		var id = e.dataTransfer.getData("Text");
+		drop_target.appendChild(document.getElementById(id));
+		e.preventDefault();
+	}
+</script>
+</body>
+</html>

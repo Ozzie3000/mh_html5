@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | arc ish </title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ background-color: #eeeeee;}
+	#canvas1{
+		background-color: white;
+		border: 5px yellow solid;
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+
+</style>
+</head>
+<body>
+	<h3>3.7 an arc - ish</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<div>
+		<canvas id="canvas1" width="400" height="400">Your broswer sucks</canvas>
+	</div>
+
+<script type="text/javascript">
+	var mycanvas = document.getElementById('canvas1');
+	var cntx = mycanvas.getContext("2d");
+	//lets draw a circle
+	cntx.beginPath();
+	cntx.arc(200, 200, 100, 0, Math.PI * 2, true);
+	cntx.closePath();
+	cntx.lineWidth = "4";
+	cntx.strokeStyle = "black";
+	cntx.stroke();
+
+	//lets draw a semi-circle
+	contex.beginPath();
+	contex.arc(200, 100, 100, 0, Math.PI, true);
+	contex.closePath();
+	contex.lineWidth = "2";
+	contex.strokeStyle = "red";
+	contex.stroke();
+</script>
+</body>
+</html>

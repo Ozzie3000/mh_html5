@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Persistent local storage</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ 
+		background-color: silver;
+		font-family: sans-serif; arial; helvetica;
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		font-size: 1.3em;
+	}
+	h3{ color: blue; font-family: sans-serif; font-size: 1.6em; text-align: center;}
+
+</style>
+<script type="text/javascript">
+	function store_task(task){
+		var taskdetail = document.getElementById(task).value;
+		localStorage.setItem(task, taskdetail);
+	}
+	function get_task(task){
+		document.getElementById(task).value = localStorage.getItem(task);
+	}
+	function clear_task(task){
+		localStorage.removeItem(task);
+		document.getElementById(task).value = "";
+	}
+</script>
+</head>
+<body>
+	<h3 style="margin-bottom:2px;">7.1 Persistent local storage</h3>
+	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<br /><br />
+
+	<div>
+		<h3>A to do list</h3>
+		<br>
+		Task 1 <input id="task1" type="text"><br>
+		<input type="button" value="Save this task" onclick="store_task('task1');">
+		<input type="button" value="Get this task" onclick="get_task('task1');">
+		<input type="button" value="Clear this task" onclick="clear_task('task1');">
+		<br><br>
+		Task 2 <input id="task2" type="text"><br>
+		<input type="button" value="Save this task" onclick="store_task('task2');">
+		<input type="button" value="Get this task" onclick="get_task('task2');">
+		<input type="button" value="Clear this task" onclick="clear_task('task2');">
+		<br><br>
+		Task 3 <input id="task3" type="text"><br>
+		<input type="button" value="Save this task" onclick="store_task('task3');">
+		<input type="button" value="Get this task" onclick="get_task('task3');">
+		<input type="button" value="Clear this task" onclick="clear_task('task3');">
+		<br><br>
+		Task 4 <input id="task4" type="text"><br>
+		<input type="button" value="Save this task" onclick="store_task('task4');">
+		<input type="button" value="Get this task" onclick="get_task('task4');">
+		<input type="button" value="Clear this task" onclick="clear_task('task4');">
+		<br><br>
+	</div>
+
+
+</body>
+</html>

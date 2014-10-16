@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<
+<title>HTML5 | JS listing 2.3</title>
+<meta charset="utf-8">
+</head>
+
+<body>
+	<h3>HTML and JS | Manipulating the DOM with JS.</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br />
+	<div id="div1">
+		<p>This is a paragraph inside div1.</p>
+	</div>
+	<div id="div2">
+		<p>This is another paragraph, but it is inside div2.</p>
+		<p><a href="javascript:waitabit()">Click me to run the function</a></p>
+		<p style="font-size: 2.5vw;">Or</p>
+		<input type="button" value="Click me to also run the function" onclick="waitabit();" />
+	</div>
+	<p>Window size on load</p>
+	<p id="showthewindow"></p>
+	<script type="text/javascript">
+		var d1 = document.getElementById("div1");
+		d1.style.color = "#0000ff";
+		d1.style.fontweight = "bold";
+
+		function waitabit(){
+			alert("This is your warning");
+		}
+		var windooo = document.getElementById("showthewindow").clientWidth;
+		document.getElementById("showthewindow").innerHTML = windooo;
+	</script>
+	<!-- load at the end is one option that may or may not be what you need -->
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | JS</title>
+<meta charset="utf-8">
+</head>
+<script type="text/javascript">
+	var d1 = document.getElementById("div1");
+	d1.style.color = "#0000ff";
+	d1.style.fontweight = "bold";
+
+	function waitabit(){
+		alert("This is your warning");
+	}
+</script>
+<body>
+	<h3>HTML and JS</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br />
+	<div id="div1">
+		<p>This is a paragraph inside div1.</p>
+	</div>
+	<div id="div2">
+		<p>This is another paragraph, but it is inside div2.</p>
+	</div>
+<!-- JS tries to manipulate the DOM, but cannot find what it needs since it has not been loaded yet.  waitabit() waiting on a call.  -->
+</body>
+</html>

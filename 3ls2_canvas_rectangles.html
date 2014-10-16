@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Draw rectangles</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<link rel="stylesheet" href="./css/.css" type="text/css" />
+<style type="text/css">
+	body{
+		background-color: #eeeeee;
+	}
+	#outer {
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+<body>
+	<h3>Lets draw some rectangles</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+	<div id="outer">
+		<canvas id="canvas1" width="400" height="400" style="border: 10px yellow solid">
+			Again dude get a different broswer!
+		</canvas>
+	</div>
+	<script>
+		var canvii = document.getElementById("canvas1");
+		var contex = canvii.getContext('2d');
+			//draw solid recs
+		contex.fillStyle = 'rgb(255, 0, 255)';
+		contex.fillRect(30, 30, 400, 400);
+			//draw recs with 50% transparency
+		contex.fillStyle = 'rgba(0, 0, 0, 0.5)';
+		contex.fillRect(60, 60, 200, 200);
+			//draw recs with 50% transparency
+		contex.fillStyle = 'rgba(255, 0, 0.25)';
+		contex.fillRect(90, 90, 400, 400);
+			//draw recs with 50% transparency
+	</script>
+
+</body>
+</html>

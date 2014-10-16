@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Circularish</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ background-color: #eeeeee;}
+	#canviA{ 
+		background-color: white; 
+		border: 5px red solid;
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+<body>
+	<h3>3.8 VaringCircular shapes</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<canvas id="canviA" width="500" height="500">Yo, get a new browser already</canvas>
+
+<script>
+	var mycanvas = document.getElementById("canviA");
+	var contex = mycanvas.getContext("2d");
+
+	contex.lineWidth = "2";
+	for (i=0; i<=500; i=i+30){
+		for (a=0; a<=500; a=a+30){
+			contex.beginPath();
+			contex.arc(i, a, 10, 0, Math.PI * 2, true);
+			rndcolor1 = (Math.floor(Math.random()*255));
+			rndcolor2 = (Math.floor(Math.random()*255));
+			rndcolor3 = (Math.floor(Math.random()*255));
+			contex.strokeStyle = 'rgb(' + rndcolor1 + ',' + rndcolor2 + ',' + rndcolor3 + ')';
+				contex.closePath();
+				contex.stroke();
+		}
+	}
+
+</script>
+</body>
+</html>

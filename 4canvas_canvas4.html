@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Canvas a canvas</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ background-color: #eeeeee;}
+	#canviA{ 
+		background-color: white; 
+		border: 5px red solid;
+		margin-left: 40px;
+		margin-top: 40px;
+	}
+</style>
+</head>
+<body>
+	<h3>4.4 Canvas a canvas</h3>
+	<input type="button" value="Refreshness" onclick="location.reload();" />
+	<br /><br />
+
+	<canvas id="canviA" width="500" height="500">Your browser needs an upgrade</canvas>
+
+	<table>
+		<tr>
+			<td style="background-color:black;" onclick="newcolor('00,00,00')">&nbsp;&nbsp;&nbsp;</td>
+			<td style="background-color:blue;" onclick="newcolor('00,00,255')">&nbsp;&nbsp;&nbsp;</td>
+			<td style="background-color:green;" onclick="newcolor('00,64,00')">&nbsp;&nbsp;&nbsp;</td>
+			<td style="background-color:gray;" onclick="newcolor('128,128,128')">&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="background-color:red;" onclick="newcolor('255,00,00')">&nbsp;&nbsp;&nbsp;</td>
+			<td style="background-color:yellow;" onclick="newcolor('255,255,00')">&nbsp;&nbsp;&nbsp;</td>
+			<td style="background-color:orange;" onclick="newcolor('255,165,00')">&nbsp;&nbsp;&nbsp;</td>
+			<td style="background-color:white;" onclick="newcolor('255,255,255')">&nbsp;&nbsp;&nbsp;</td>
+		</tr>
+	</table>
+
+	<div id="colorchoice"></div>
+		<select id="linewidth">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+		</select>
+	</div>
+
+<script type="text/javascript">
+//now for the event listeners
+	if(window.addEventListener){
+		window.addEventListener('load', function(){
+			var mycanvii = document.getElementById('canviA');
+			var contex = mycanvii.getContext('2d');
+			var brush;
+			function init (){
+				//instantiate the new brush
+				brush = new paintbrush();
+				//attach the mousedown, mousemove, and mouseup event listeners
+				mycanvii.addEventListener('mousedown', ev_canvas, false);
+				mycanvii.addEventListener('mousemove', ev_canvas, false);
+				mycanvii.addEventListener('mouseup', ev_canvas, false);
+			}
+			function paintbrush(){
+				var brush = this;
+				this.started = false;
+				//a color?
+				var color = document.getElementById('colorchoice').innerHTML;
+				contex.strokeStyle = 'rgb(' + color + ')';
+				//this mousedown allows the brush to start drawing
+				this.mousedown = function (ev){
+					brush.started = true;
+					contex.beginPath();
+					contex.moveTo(ev._x, ev._y);
+					//by moving the line by one pixel a dot is put on the canvas
+					contex.moveTo(ev._x+1, ev._y+1);
+					contex.stroke();
+				};
+				//this movemove allows the brush to continue to draw
+				this.mousemove = function (ev){
+					if (brush.started){
+						//a color?
+						var color = document.getElementById('colorchoice').innerHTML;
+						var linewidth = document.getElementById('linewidth').value;
+						contex.strokeStyle = 'rgb(' + color + ')';
+						contex.linewidth = linewidth;
+						contex.lineTo(ev._x, ev._y);
+						contex.stroke();
+					}
+				};
+				//This is called when you release the mouse button
+				this.mouseup = function (ev){
+					if (brush.started){
+						brush.started = false;
+					}
+				};
+			}
+			//Determine the mouse position relative to the canvas
+			function ev_canvas (ev){
+				if (ev.layerX || ev.layerX == 0){
+					//firefox
+					ev._x = ev.layerX;
+					ev._y = ev.layerY;
+				}else if (ev.offsetX || ev.offsetX == 0){
+					//opera
+					ev._x = ev.layerX;
+					ev._y = ev.layerY;
+				}
+				//call the event handler
+				var func = brush[ev.type];
+				if (func){
+					func(ev);
+				}
+			}
+			init();
+		}, false);}
+		function newcolor(color){
+			document.getElementById('colorchoice').innerHTML=color;
+		}
+</script>
+</body>
+</html>
