@@ -46,7 +46,11 @@
 	<div id="box" draggable="true" ondragstart="drag(this, event)" ondragend="return false"></div>
 
 <script type="text/javascript">
-
+	function drag(drag_object, e){
+		e.dataTransfer.dropEffect="move";
+		e.dataTransfer.effectAllowed="move";
+		e.dataTransfer.setData("Text", drag_object.id);
+	}
 </script>
 </body>
 </html>
