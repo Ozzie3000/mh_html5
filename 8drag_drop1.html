@@ -19,7 +19,7 @@
 		width: 300px;
 		height: 200px;
 		top: 200px;
-		left: 400px
+		left: 400px;
 		background-color: #ededed;
 		border-style: solid;
 		border-width: thin;
@@ -41,7 +41,8 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-	<div id="dropoff" ></div>
+	<div id="dropoff" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false"></div>
+
 	<div id="box" draggable="true" ondragstart="drag(this, event)" ondragend="return false"></div>
 
 <script type="text/javascript">
