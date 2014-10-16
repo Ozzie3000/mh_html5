@@ -14,7 +14,23 @@
 		background-position: center center;
 	}
 	h3{ color: white; font-family: sans-serif; text-align: center;}
-
+	#dropoff{
+		position: absolute;
+		width: 300px;
+		height: 200px;
+		top: 200px;
+		left: 400px
+		background-color: #ededed;
+		border-style: solid;
+		border-width: thin;
+	}
+	#box{
+		width: 100px;
+		height: 100px;
+		background-color: #00efef;
+		border-style: solid;
+		border-width: thin;
+	}
 </style>
 <script type="text/javascript">
 
@@ -25,7 +41,8 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-
+	<div id="dropoff" ></div>
+	<div id="box" draggable="true" ondragstart="drag(this, event)" ondragend="return false"></div>
 
 <script type="text/javascript">
 
