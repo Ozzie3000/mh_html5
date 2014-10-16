@@ -93,6 +93,13 @@
 		var fruit_4 = localStorage.getItem("fruit_4");
 		if (fruit_1 == null){
 			document.getElementById("divfruit_1").innerHTML='<img src="">';
+		} else {
+			document.getElementById("divfruit_1").innerHTML='<img src="' + fruit_1 + '">';
+		}
+		if (fruit_2 == null){
+			document.getElementById("divfruit_2").innerHTML='<img src="">';
+		} else {
+			document.getElementById("divfruit_2").innerHTML='<img src="' + fruit_2 + '">';
 		}
 	</script>
 	</div>
