@@ -27,7 +27,14 @@
 		document.getElementById("divfruit" + divnum).innerHTML='<img src="' + pic_detail + '">';
 	}
 	function get_pic(divnum){
-		
+		var the_pic = localStorage.getItem("fruit" + divnum);
+		document.getElementById("divfruit" + divnum).innerHTML='<img src="' + the_pic + '">';
+	}
+	function clear_pic() {
+		for (i=1; 1<=4; i++){
+			localStorage.removeItem('fruit' + i);
+			document.getElementById('divfruit' + i).innerHTML="";
+		}
 	}
 </script>
 </head>
