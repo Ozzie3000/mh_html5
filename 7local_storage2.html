@@ -78,11 +78,23 @@
 		<br /><br />
 		<input type="button" value="Clear Graphics" onclick="clear_pic();">
 		<br /><br />
-		div id="divfruit_1"></div>
+
+		<div id="divfruit_1"></div>
 		<div id="divfruit_2"></div>
 		<div id="divfruit_3"></div>
 		<div id="divfruit_4"></div>
 
+	<script type="text/javascript">
+		//restore the arrangement of fruit when page opens
+		//or display default config
+		var fruit_1 = localStorage.getItem("fruit_1");
+		var fruit_2 = localStorage.getItem("fruit_2");
+		var fruit_3 = localStorage.getItem("fruit_3");
+		var fruit_4 = localStorage.getItem("fruit_4");
+		if (fruit_1 == null){
+			document.getElementById("divfruit_1").innerHTML='<img src="">';
+		}
+	</script>
 	</div>
 
 
