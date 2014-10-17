@@ -14,8 +14,7 @@
 		background-position: center center;
 	}
 	h3{ color: blue; font-family: sans-serif; text-align: center;}
-	div{
-	}
+	
 	#dropoff{
 		position: absolute;
 		width: 300px;
@@ -23,7 +22,8 @@
 		top: 200px;
 		left: 400px;
 		background-color: #ededed;
-		border: 
+		border-style: solid;
+		border-width: thin;
 	}
 	#box{
 		width: 100px;
@@ -51,7 +51,7 @@
 		left: 200px;
 		font-size: 1.6em;
 		visibility: hidden;
-		background-color: yellow;
+		background-color: blue;
 		opacity: 0.7;
 	}
 </style>
@@ -63,7 +63,7 @@
 
 	<div id="dropoff" ondrop="drop(this, event)" ondragenter="enter(event)" ondragover="return false"></div>
 
-	<div id="box" draggable="true"></div>
+	<div id="box" draggable="true" ondragstart="drag(this, event)" ondragend="return false"></div>
 
 	<div id="secretdiv1">I appear when the small box is enters the big box.</div>
 
@@ -83,7 +83,6 @@
 		document.getElementById("secretdiv2").style.visibility="visible";
 		e.preventDefault();
 	}
-
 </script>
 </body>
 </html>
