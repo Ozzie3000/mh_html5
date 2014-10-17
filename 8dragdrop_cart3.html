@@ -72,9 +72,19 @@
 		<div dragable="true" id="banana1" class="fruit" ondragstart="drag(this, event)"><img src="" alt="banana" /></div>
 		<div dragable="true" id="banana2" class="fruit" ondragstart="drag(this, event)"><img src="" alt="banana" /></div>
 		<div dragable="true" id="banana3" class="fruit" ondragstart="drag(this, event)"><img src="" alt="banana" /></div>
+		<div dragable="true" id="strawberry1" class="fruit" ondragstart="drag(this, event)"><img src="" alt="strawberry" /></div>
+		<div dragable="true" id="strawberry2" class="fruit" ondragstart="drag(this, event)"><img src="" alt="strawberry" /></div>
+		<div dragable="true" id="strawberry3" class="fruit" ondragstart="drag(this, event)"><img src="" alt="strawberry" /></div>
+	</div>
+	<br /><br /><br />
 
+	<div id="shoppingcart" class="container">
+		<div id="shoppingcartcenter" opdrop="drop(this, event, 'shoppingcart')" ondragenter="return false" ondragover="return false"></div>
+		<img src="" alt="shopping cart" />
 	</div>
 
+	<div id="dollarsign">$</div>
+	<div id="cost">0.00</div>
 <script type="text/javascript">
 	function drag(drag_object, e){
 		e.dataTransfer.setData("Text", drag_object.id);
