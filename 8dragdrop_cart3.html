@@ -21,7 +21,7 @@
 		border-style: solid;
 		border-width: thin;
 	}
-	#shopingcart{
+	#shopingcartcenter{
 		position: absolute;
 		width: 180px;
 		height: 220px;
@@ -74,6 +74,19 @@
 	function drop(drop_target, e, elementname){
 		var id = e.dataTransfer.getData("Text");
 		drop_target.appendChild(document.getElementById("cost").innerHTML);
+		//fruit type will determine price
+		if (id.indexOf("apple")>-1) {price = 0.3}
+		if (id.indexOf("banana")>-1) {price = 0.4}
+		if (id.indexOf("strawberry")>-1) {price = 0.1}
+			switch (elementname){
+				case "shopingcart":
+					newcost = (currentcost + price).toFixed(2);
+					break;
+				case "shelf":
+					newcost = (currentcost - price).toFixed(2);
+					break;
+			}
+			document.getElementById("cost").innerHTML=newcost;
 	}
 </script>
 </body>
