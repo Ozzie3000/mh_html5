@@ -65,10 +65,16 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-
+	<div id="shelf"></div>
 
 <script type="text/javascript">
-
+	function drag(drag_object, e){
+		e.dataTransfer.setData("Text", drag_object.id);
+	}
+	function drop(drop_target, e, elementname){
+		var id = e.dataTransfer.getData("Text");
+		drop_target.appendChild(document.getElementById("cost").innerHTML);
+	}
 </script>
 </body>
 </html>
