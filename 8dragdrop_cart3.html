@@ -91,7 +91,9 @@
 	}
 	function drop(drop_target, e, elementname){
 		var id = e.dataTransfer.getData("Text");
-		drop_target.appendChild(document.getElementById("cost").innerHTML);
+		drop_target.appendChild(document.getElementById(id));
+		e.preventDefault();
+		currentcost = parseFloat(document.getElementById("cost").innerHTML);
 		//fruit type will determine price
 		if (id.indexOf("apple")>-1) {price = 0.3}
 		if (id.indexOf("banana")>-1) {price = 0.4}
