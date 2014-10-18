@@ -23,8 +23,9 @@
 	}
 	#shopingcartcenter{
 		position: absolute;
-		width: 180px;
-		height: 220px;
+		width: 210px;
+		height: 210px;
+		top: 320px;
 		left: 75px;
 	}
 	.fruit{
@@ -99,7 +100,7 @@
 		if (id.indexOf("banana")>-1) {price = 0.4}
 		if (id.indexOf("strawberry")>-1) {price = 0.1}
 			switch (elementname){
-				case "shopingcart":
+				case "shoppingcart":
 					newcost = (currentcost + price).toFixed(2);
 					break;
 				case "shelf":
