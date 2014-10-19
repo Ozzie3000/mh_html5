@@ -20,20 +20,26 @@
 		height: 100px;
 		background-color: yellow;
 	}
+	#xo{
+		
+	}
 	#O{
 		position: absolute;
-		width: 150px;
+		padding-top: 10px;
+		width: 100px;
 		height: 240px;
 		top: 60px;
-		left: 800px;
+		right: 10px;
 		background-color: silver;
+		
 	}
 	#X{
-		position: absolute;
-		width: 150px;
+		position: absolute; 
+		padding-top: 10px;
+		width: 100px;
 		height: 240px;
 		top: 320px;
-		left: 800px;
+		right: 10px;
 		background-color: goldenrod;
 	}
 	#tictactoetable{
@@ -51,24 +57,27 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-	<div id="O"
-		ondrop="drop(this, event)"
-		ondragenter="return false"
-		ondragover="return false">
-		<div id="o1" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
-		<div id="o2" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
-		<div id="o3" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
-		<div id="o4" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
-	</div>
+	<div id="xo">
+		<div id="O"
+			ondrop="drop(this, event)"
+			ondragenter="return false"
+			ondragover="return false">
+			<div id="o1" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
+			<div id="o2" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
+			<div id="o3" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
+			<div id="o4" draggable="true" ondragstart="drag(this, event)"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Letter_o.svg/50px-Letter_o.svg.png" alt="O"></div>
+		</div>
 
-	<div id="X"
-		ondrop="drop(this, event)"
-		ondragenter="return false"
-		ondragover="return false">
-		<div id="x1" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
-		<div id="x2" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
-		<div id="x3" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
-		<div id="x4" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
+
+		<div id="X"
+			ondrop="drop(this, event)"
+			ondragenter="return false"
+			ondragover="return false">
+			<div id="x1" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
+			<div id="x2" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
+			<div id="x3" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
+			<div id="x4" draggable="true" ondragstart="drag(this, event)"><img src="https://lh4.googleusercontent.com/-3X70oHKoMXM/AAAAAAAAAAI/AAAAAAAAAAA/1930n-q-zR4/photo.jpg?sz=50" alt="X"></div>
+		</div>
 	</div>
 
 	<div id="tictactoetable">
@@ -77,6 +86,14 @@
 				<td id="box1" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
 				<td id="box2" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
 				<td id="box3" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
+			</tr>
+			<td id="box4" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
+				<td id="box5" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
+				<td id="box6" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
+			</tr>
+			<td id="box7" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
+				<td id="box8" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
+				<td id="box9" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
 			</tr>
 		</table>
 
