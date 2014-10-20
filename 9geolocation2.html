@@ -18,9 +18,9 @@
 </style>
 <script type="text/javascript">
 	function find_you(){
-		navigator.geolocation.getCurrentPosition(showPostion, noLocation, {maximumAge: 120000, timeout: 30000});
+		navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 120000, timeout: 30000});
 	}
-	function showPosition(location){
+	function show_Position(location){
 		var latitude = location.coords.latitude;
 		var longitude = location.coords.longitude;
 		var accuracy = location.coords.accuracy;
@@ -33,12 +33,22 @@
 	}
 </script>
 </head>
-<body>
+<body onload="find_you();">
 	<h3>Geoloaction 2</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
+	<input type="button" value="Find this location" onclick="find_you()" />
+	<br /><br />
+	<input type="button" value="Show position" onclick="show_Position()" />
+	<br /><br />
 
+	<div id="error"></div>
 
+	<p id="horizontal">&nbsp;</p>
+	<p id="vertical">&nbsp;</p>
+	<p id="deviation">&nbsp;</p>
+
+	<p id=""></p>
 
 <script type="text/javascript">
 	
