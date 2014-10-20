@@ -17,7 +17,20 @@
 
 </style>
 <script type="text/javascript">
-
+	function find_you(){
+		navigator.geolocation.getCurrentPosition(showPostion, noLocation, {maximumAge: 120000, timeout: 30000});
+	}
+	function showPosition(location){
+		var latitude = location.coords.latitude;
+		var longitude = location.coords.longitude;
+		var accuracy = location.coords.accuracy;
+		document.getElementById("horizontal").innerHTML = "Your latitude is: " + latitude;
+		document.getElementById("vertical").innerHTML = "Your longitude is: " + longitude;
+		document.getElementById("deviation").innerHTML = "Accurate within: " + accuracy + " meters";
+	}
+	function failed_to_find(locationError){
+		document.getElementById("error").innerHTML = "Sorry a determination could not be made.  You may have location detection disabled."
+	}
 </script>
 </head>
 <body>
@@ -28,7 +41,7 @@
 
 
 <script type="text/javascript">
-
+	
 </script>
 </body>
 </html>
