@@ -96,9 +96,19 @@
 				<td id="box9" ondrop="drop(this, event)" ondragenter="return false" ondragover="return false">&nbsp;</td>
 			</tr>
 		</table>
+	<br /><br />
+	&nbsp;&nbsp;
+	<a href="http://www.amazon.com">Buy me stuff</a>
 
 <script type="text/javascript">
-
+	function drag(drag_object, e){
+		e.dataTransfer.setData('Text', drag_object.id);
+	}
+	function drop(drop_target, e, elementname){
+		var id = e.dataTransfer.getData('Text');
+		drop_target.appendChild(document.getElementById(id));
+		e.preventDefault();
+	}
 </script>
 </body>
 </html>
