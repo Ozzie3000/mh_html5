@@ -22,8 +22,8 @@
 </style>
 <script type="text/javascript">
 	function find_you(){
-		if (!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000}){
-			document.getElementById("error").innerHTML="This browser does not support geolocation.";
+		if (!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000})){
+			document.getElementById("error").innerHTML="This browser does not support geolocation. Or you may need to adjust location settings and refresh.";
 		}
 	}
 	function show_Position(location){
@@ -53,7 +53,7 @@
 	}
 </script>
 </head>
-<body>
+<body onload="find_you();">
 	<h3>9.4 Detecting browser support</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
