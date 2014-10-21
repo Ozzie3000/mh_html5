@@ -23,7 +23,7 @@
 <script type="text/javascript">
 	function find_you(){
 		if (!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000}){
-			document.getElementById("someID").innerHTML="This browser does not support geolocation.";
+			document.getElementById("error").innerHTML="This browser does not support geolocation.";
 		}
 	}
 	function show_Position(location){
@@ -58,7 +58,10 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-
+	<div>Latitude goes here: <p id="horizontal">&nbsp;</p></div>
+	<div>Longitude goes here: <p id="vertical">&nbsp;</p></div>
+	<div>Accuracy goes here: <p id="deviation">&nbsp;</p></div>
+	<div>Error goes here: <p id="error">&nbsp;</p></div>
 
 <script type="text/javascript">
 
