@@ -19,7 +19,7 @@
 </style>
 <script type="text/javascript">
 	function find_you(){
-		navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 3000});
+		navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000});
 	}
 	function show_Position(location){
 		var latitude = location.coords.latitude;
@@ -34,7 +34,7 @@
 		var error_message = document.getElementById("error");
 		switch(locationError.code){
 			case locationError.PERMISSION_DENIED:
-				error_message.innerHTML="Your position could not be provided due to PERMISSION DENIED";
+				error_message.innerHTML="Your position could not be provided due to \"PERMISSION DENIED\"";
 			break;
 			case locationError.POSITION_UNAVAILABLE:
 				error_message.innerHTML="Your position is not available at this time. Try a different from a different location.";
@@ -48,11 +48,15 @@
 	}
 </script>
 </head>
-<body>
+<body onload="find_you()">
 	<h3>9.3 Improved error response</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
+	<p id="horizontal">&nbsp;</p>
+	<p id="vertical">&nbsp;</p>
+	<p id="deviation">&nbsp;</p>
+	<p id="error">&nbsp;</p>
 
 
 <script type="text/javascript">
