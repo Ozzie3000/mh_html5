@@ -21,7 +21,36 @@
 
 </style>
 <script type="text/javascript">
-
+	function find_you(){
+		if (!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000}){
+			document.getElementById("someID").innerHTML="This browser does not support geolocation.";
+		}
+	}
+	function show_Position(location){
+		var latitude = location.coords.latitude;
+		var longitude = location.coords.longitude;
+		var accuracy = location.coords.accuracy;
+		document.getElementById("horizontal").innerHTML = "Your latitude is: " + latitude;
+		document.getElementById("vertical").innerHTML = "Your longitude is: " + longitude;
+		document.getElementById("deviation").innerHTML = "Accurate within: " + accuracy + " meters";
+	}
+	function failed_to_find(locationError){
+		document.getElementById("error").innerHTML = "Sorry a determination could not be made. You may have location detection disabled."
+		var error_message = document.getElementById("error");
+		switch(locationError.code){
+			case locationError.PERMISSION_DENIED:
+				error_message.innerHTML="Your position could not be provided due to \"PERMISSION DENIED\"";
+			break;
+			case locationError.POSITION_UNAVAILABLE:
+				error_message.innerHTML="Your position is not available at this time. Try a different from a different location.";
+				break;
+			case locationError.TIMEOUT:
+				error_message.innerHTML="Your request has taken too long and has timed out.";
+				break;
+			default:
+				error_message.innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories."
+		}
+	}
 </script>
 </head>
 <body>
