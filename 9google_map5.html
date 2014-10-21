@@ -28,7 +28,7 @@
 </script>
 <script type="text/javascript">
 	function find_you(){
-		if (!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000})){
+		if(!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 32000, timeout: 16000})){
 			document.getElementById("error").innerHTML="This browser does not support geolocation. Or you may need to adjust location settings and refresh.";
 		}
 	}
@@ -37,10 +37,10 @@
 		var longitude = location.coords.longitude;
 		var accuracy = location.coords.accuracy;
 		//map time
-		var position = new google.maps.latLng(latitude,longitude);
+		var position = new google.maps.LatLng(latitude,longitude);
 		//build in options
 		var myOptions = {
-			zoom: 18,
+			zoom: 13,
 			center: position,
 			mapTypeId: google.maps.MapTypeId.SATELITTE
 		};
@@ -56,7 +56,7 @@
 		switch(locationError.code){
 			case locationError.PERMISSION_DENIED:
 				error_message.innerHTML="Your position could not be provided due to \"PERMISSION DENIED\"";
-			break;
+				break;
 			case locationError.POSITION_UNAVAILABLE:
 				error_message.innerHTML="Your position is not available at this time. Try a different from a different location.";
 				break;
@@ -67,17 +67,18 @@
 				error_message.innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories."
 		}
 	}
+
 </script>
 </head>
-<body onload="find_you();">
+<body>
 	<h3>Cartographer anyone?</h3>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
-
+	<script type="text/javascript">find_you();</script>
 	<div>Latitude goes here: <p id="horizontal">&nbsp;</p></div>
 	<div>Longitude goes here: <p id="vertical">&nbsp;</p></div>
 	<div>Accuracy goes here: <p id="deviation">&nbsp;</p></div>
-	<div>Error goes here: <p id="error">&nbsp;</p></div>
+	<div>Error goes here: </br>Or Map below: <p id="error">&nbsp;</p></div>
 
 	<div id="map"></div>
 
