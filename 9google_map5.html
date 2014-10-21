@@ -26,6 +26,32 @@
 <!-- API here we come  -->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false">
 </script>
+<script type="text/javascript">
+	function find_you(){
+		if (!navigator.geolocation.getCurrentPosition(show_Position, failed_to_find, {maximumAge: 12000, timeout: 6000})){
+			document.getElementById("error").innerHTML="This browser does not support geolocation. Or you may need to adjust location settings and refresh.";
+		}
+	}
+	function show_Position(location){
+		var latitude = location.coords.latitude;
+		var longitude = location.coords.longitude;
+		var accuracy = location.coords.accuracy;
+		//map time
+		var position = new google.maps.latLng(latitude,longitude);
+		//build in options
+		var myOptions = {
+			zoom: 18,
+			center: position,
+			mapTypeId: google.maps.MapTypeId.SATELITTE
+		};
+		//well let's see it already
+		var map = new google.maps.Map(document.getElementById("map"), myOptions);
+		document.getElementById("horizontal").innerHTML = "Your latitude is: " + latitude;
+		document.getElementById("vertical").innerHTML = "Your longitude is: " + longitude;
+		document.getElementById("deviation").innerHTML = "Accurate within: " + accuracy + " meters";
+	}
+	
+</script>
 </head>
 <body onload="func();">
 	<h3>Cartographer anyone?</h3>
