@@ -10,33 +10,32 @@
 		/* local */
 		/*background: url("..//pictures/background-wallpapers-60.png"); */
 		/* not local */
-		background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");
+		//background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");
+		background: url("http://host2post.com/server13/photos/pxEcaC16L764vM~/15-really-cool-world-map-wallpapers.jpg");
 		background-attachment: fixed;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
 		color: white;
+		font-size: 18px;
 	}
 	#map{
 		width:75%;
-		height:700px;
+		height:800px;
+		display: table;
+    margin: 0 auto;
 	}
-	h3{ color: white; font-family: sans-serif; text-align: center;}
+	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 26px;}
+	p{ text-align: center;}
 </style>
-
 <!--set the api -->
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false">
-</script>
-
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
 	function findYou(){
-		if(navigator.geolocation.getCurrentPosition(showPosition,
-	 noLocation, {maximumAge : 1200000, timeout : 30000})){
-	 
-	 }
-	 else{
-		document.getElementById("lat").innerHTML="This browser does not support geolocation.";
-	}
+		if(navigator.geolocation.getCurrentPosition(showPosition, noLocation, {maximumAge : 1200000, timeout : 30000})){
+	 }else{
+		document.getElementById("lat").innerHTML="This browser does not support geolocation. Or you may need to adjust location settings and click 'Refreshness'.";
+		}
 	}
 	function showPosition(location){
 		var latitude = location.coords.latitude;
@@ -54,7 +53,7 @@
 		var map = new google.maps.Map(document.getElementById("map"),
 	        myOptions);
 			
-		var houseIcon = 'house.png';
+		var houseIcon = 'http://demo.woothemes.com/estate/wp-content/themes/estate/images/ico-property/ico-size-big.png';
 		var point = new google.maps.Marker({
 		icon: houseIcon,
 		position: position,
@@ -100,39 +99,36 @@
 		switch(locationError.code)
 		{
 		case locationError.PERMISSION_DENIED:
-			document.getElementById("lat").innerHTML=
-				"You have denied my request for your location.";
+			document.getElementById("lat").innerHTML="You have denied my request for your location.";
 				break;
 		case locationError.POSITION_UNAVAILABLE:
-			document.getElementById("lat").innerHTML=
-				"Your position is not available at this time.";
+			document.getElementById("lat").innerHTML="Your position is not available at this time.";
 				break;
 	 case locationError.TIMEOUT: 
-			document.getElementById("lat").innerHTML=
-				"My request for your location took too long.";
+			document.getElementById("lat").innerHTML="My request for your location took too long.";
 				break;
 		default:
-			document.getElementById("lat").innerHTML=
-				"An unexpected error occurred.";
+			document.getElementById("lat").innerHTML="An unexpected error occurred.";
 		}
 	}
 </script>
 </head> 
 <body>
-<h1>Your Location and Natural Wonders of the World</h1>
+	<h1>Your Location and Natural Wonders of the World</h1>
+	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<br /><br />
 <script>
-	findYou();
+	window.setTimeout("findYou()", 3000);
 </script>
-<table width="100%">
-<tr>
-<td><p id="lat"/></td>
-<td><p id="lon">&nbsp;</p></td>
-<td><p id="acc">&nbsp;</p></td>
-</tr>
-</table>
+	<table width="100%">
+		<tr>
+			<td><p id="lat"/></td>
+			<td><p id="lon">&nbsp;</p></td>
+			<td><p id="acc">&nbsp;</p></td>
+		</tr>
+	</table>
 
-<div id="map">
-	
-</div>
+	<div id="map"></div>
+	<br /><br /><br />
 </body>
 </html>
