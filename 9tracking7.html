@@ -69,8 +69,17 @@
 			default:
 				errorMessage.innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories.";
 		}
-		function addRow(horizontal, vertical, deviation, timestamp){
-			var tbody
+		function addRow(hor, ver, dev, time){
+			var tbody = document.getElementById("position_table");
+			var row = document.createElement("tr");
+			var tdhor = document.createElement("td");
+			tdhor.appendChild(document.createTextNode(hor));
+			var tdver = document.createElement("td");
+			tdver.appendChild(document.createTextNode(ver));
+			var tddev = document.createElement("td");
+			tddev.appendChild(document.createTextNode(dev));
+			var tdtime = document.createElement("td");
+			tdtime.appendChild(document.createTextNode(time.toString()));
 		}
 	}
 </script>
