@@ -48,42 +48,26 @@
 		watchOperation = navigator.geolocation.watchPosition(show_position,find_failed, {maximumAge: 60000, timeout: 30000});
 	}
 	function show_position(location){
-		var latitude = location.coords.latitude;
-		var longitude = location.coords.longitude;
-		var accuracy = location.coords.accuracy;
-		//build the map
-		var position = new google.maps.LatLng(latitude, longitude);
-		//build the options
-		var myOptions = {
-      zoom:2,
-      center: position,
-      mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-		//display the map
-		var map = new google.maps.Map(document.getElementById("map"),
-	        myOptions);
-			
-		var houseIcon = 'http://demo.woothemes.com/estate/wp-content/themes/estate/images/ico-property/ico-size-big.png';
-		
-
-		document.getElementById("lat").innerHTML="Your latitude is " + latitude;
-		document.getElementById("lon").innerHTML="Your longitude is " + longitude;
-		document.getElementById("acc").innerHTML="Accurate within " + accuracy + " meters";
+		var vertical = location.coords.latitude;
+		var horizontal = location.coords.longitude;
+		var deviation = location.coords.accuracy;
+		var timestamp = location.timestamp;
+		addRow(vertical, horizontal, deviation, timestamp);
 	}
 	function find_failed(locationError){
-		switch(locationError.code)
-		{
-		case locationError.PERMISSION_DENIED:
-			document.getElementById("lat").innerHTML="You have denied my request for your location.";
-				break;
-		case locationError.POSITION_UNAVAILABLE:
-			document.getElementById("lat").innerHTML="Your position is not available at this time.";
-				break;
-	 case locationError.TIMEOUT: 
-			document.getElementById("lat").innerHTML="My request for your location took too long.";
-				break;
-		default:
-			document.getElementById("lat").innerHTML="An unexpected error occurred.";
+		var errorMessage = document.getElementById("error");
+		switch(locationError.code){
+			case locationError.PERMISSION_DENIED:
+				document.getElementById("lat").innerHTML="Your position could not be provided due to \"PERMISSION DENIED\"";
+					break;
+			case locationError.POSITION_UNAVAILABLE:
+				document.getElementById("lat").innerHTML="Your position is not available at this time. Try a different from a different location.";
+					break;
+			case locationError.TIMEOUT: 
+				document.getElementById("lat").innerHTML="Your request has taken too long and has timed out.";
+					break;
+			default:
+				document.getElementById("lat").innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories.";
 		}
 	}
 </script>
