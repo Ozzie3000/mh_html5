@@ -27,6 +27,15 @@
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 26px;}
 	p{ text-align: center;}
+	/******* responsive  *****/
+	@media screen and (max-width: 479px){#map{height: 200px;}
+	}
+	@media screen and (min-width: 480px) and (max-width: 599px){#map{height: 300px;}
+	}
+	@media screen and (min-width: 600px) and (max-width: 720px){#map{height: 400px;}
+	}
+	@media screen and (min-width: 721px) and (max-width: 840px){#map{height: 500px;}
+	}
 </style>
 <!--set the api -->
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
