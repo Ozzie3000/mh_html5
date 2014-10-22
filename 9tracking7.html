@@ -58,16 +58,19 @@
 		var errorMessage = document.getElementById("error");
 		switch(locationError.code){
 			case locationError.PERMISSION_DENIED:
-				document.getElementById("lat").innerHTML="Your position could not be provided due to \"PERMISSION DENIED\"";
+				errorMessage.innerHTML="Your position could not be provided due to \"PERMISSION DENIED\"";
 					break;
 			case locationError.POSITION_UNAVAILABLE:
-				document.getElementById("lat").innerHTML="Your position is not available at this time. Try a different from a different location.";
+				errorMessage.innerHTML="Your position is not available at this time. Try a different from a different location.";
 					break;
 			case locationError.TIMEOUT: 
-				document.getElementById("lat").innerHTML="Your request has taken too long and has timed out.";
+				errorMessage.innerHTML="Your request has taken too long and has timed out.";
 					break;
 			default:
-				document.getElementById("lat").innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories.";
+				errorMessage.innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories.";
+		}
+		function addRow(horizontal, vertical, deviation, timestamp){
+			var tbody
 		}
 	}
 </script>
