@@ -40,13 +40,14 @@
 <!--set the api -->
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
-	function findYou(){
-		if(navigator.geolocation.getCurrentPosition(showPosition, noLocation, {maximumAge : 1200000, timeout : 30000})){
-	 }else{
-		document.getElementById("lat").innerHTML="This browser does not support geolocation. Or you may need to adjust location settings and click 'Refreshness'.";
-		}
+	var watchOperation;
+	function stopTracking(){
+		navigator.geolocation.clearWatch(watchOperation);
 	}
-	function showPosition(location){
+	function find_you(){
+		watchOperation = navigator.geolocation.watchPosition(show_position,find_failed, {maximumAge: 60000, timeout: 30000});
+	}
+	function show_position(location){
 		var latitude = location.coords.latitude;
 		var longitude = location.coords.longitude;
 		var accuracy = location.coords.accuracy;
@@ -69,7 +70,7 @@
 		document.getElementById("lon").innerHTML="Your longitude is " + longitude;
 		document.getElementById("acc").innerHTML="Accurate within " + accuracy + " meters";
 	}
-	function noLocation(locationError){
+	function find_failed(locationError){
 		switch(locationError.code)
 		{
 		case locationError.PERMISSION_DENIED:
@@ -92,7 +93,7 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 <script>
-	window.setTimeout("findYou()", 3000);
+	window.setTimeout("find_you()", 3000);
 </script>
 	<table width="100%">
 		<tr>
