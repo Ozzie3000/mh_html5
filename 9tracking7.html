@@ -10,8 +10,8 @@
 		/* local */
 		/*background: url("..//pictures/background-wallpapers-60.png"); */
 		/* not local */
-		//background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");
-		background: url("http://host2post.com/server13/photos/pxEcaC16L764vM~/15-really-cool-world-map-wallpapers.jpg");
+		/*background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");  */
+		background: url("http://host2post.com/server13/photos/pxEcaC16L764vM~/15-really-cool-world-map-wallpapers.jpg"); 
 		background-attachment: fixed;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -25,6 +25,7 @@
 		display: table;
     margin: 0 auto;
 	}
+	table{display: table; margin: 0 auto; text-align: center;}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 26px;}
 	p{ text-align: center;}
 	/******* responsive  *****/
@@ -37,15 +38,37 @@
 	@media screen and (min-width: 721px) and (max-width: 840px){#map{height: 500px;}
 	}
 </style>
-<!--set the api -->
+<!--set the api 
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+-->
 <script>
+	function clearIt(){
+		document.getElementById("error").innerHTML="";
+	}
 	var watchOperation;
 	function stopTracking(){
 		navigator.geolocation.clearWatch(watchOperation);
 	}
 	function find_you(){
 		watchOperation = navigator.geolocation.watchPosition(show_position,find_failed, {maximumAge: 60000, timeout: 30000});
+	}
+	function addRow(hor, ver, dev, time){
+		var tbody = document.getElementById("position_table"); 
+		var row = document.createElement("TR");
+		var tdhor = document.createElement("TD");
+		tdhor.appendChild(document.createTextNode(hor));
+		var tdver = document.createElement("TD");
+		tdver.appendChild(document.createTextNode(ver));
+		var tddev = document.createElement("TD");
+		tddev.appendChild(document.createTextNode(dev));
+		var tdtime = document.createElement("TD");
+		tdtime.appendChild(document.createTextNode(time.toString()));
+
+		row.appendChild(tdhor);
+		row.appendChild(tdver);
+		row.appendChild(tddev);
+		row.appendChild(tdtime);
+		tbody.appendChild(row);
 	}
 	function show_position(location){
 		var vertical = location.coords.latitude;
@@ -69,40 +92,31 @@
 			default:
 				errorMessage.innerHTML="An unexpected error has occured. blaaaaaaaaaaaah.  Not a very helpful message, but it did not fit the other categories.";
 		}
-		function addRow(hor, ver, dev, time){
-			var tbody = document.getElementById("position_table");
-			var row = document.createElement("tr");
-			var tdhor = document.createElement("td");
-			tdhor.appendChild(document.createTextNode(hor));
-			var tdver = document.createElement("td");
-			tdver.appendChild(document.createTextNode(ver));
-			var tddev = document.createElement("td");
-			tddev.appendChild(document.createTextNode(dev));
-			var tdtime = document.createElement("td");
-			tdtime.appendChild(document.createTextNode(time.toString()));
-
-			row.appendChild(tdhor);
-			row.appendChild(tdver);
-			row.appendChild(tddev);
-			row.appendChild(tdtime);
-			row.appendChild(tdrow);
-		}
 	}
 </script>
 </head> 
 <body>
 	<h1>HTML 5 Geolocation tracking with updates</h1>
-	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<form>
+			<input type="button" value="Refreshness" onclick="location.reload()" />
+			<input type="button" value="Enough with the tracking already" onclick="stopTracking()" />
+	</form>
+
 	<br /><br />
 <script>
 	window.setTimeout("find_you()", 3000);
+	window.setTimeout("clearIt()", 20000);
 </script>
-	<table width="100%">
+	<table style="width:95%" id="position_table">
 		<tr>
-			
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>Accuracy</th>
+			<th>Timestamp</th>
 		</tr>
 	</table>
 
+	<p id="error">Error goes here: </p>
 	<div id="map"></div>
 	<br /><br /><br />
 </body>
