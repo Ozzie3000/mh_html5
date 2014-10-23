@@ -26,6 +26,10 @@
 	img{
 		padding: 0.5em dashed blue;
 	}
+	@media screen and (max-width: 479px){#pic_1{width: 200px;}}
+	@media screen and (min-width: 480px) and (max-width: 599px){#pic_1{height: 300px;}}
+	@media screen and (min-width: 600px) and (max-width: 720px){#pic_1{height: 400px;}}
+	@media screen and (min-width: 721px) and (max-width: 840px){#pic_1{height: 500px;}}
 </style>
 <script type="text/javascript">
 
@@ -37,7 +41,7 @@
 	<br /><br />
 
 	<figure>
-		<img src="http://upload.wikimedia.org/wikipedia/commons/8/8c/Red_Mountain_Pass,_Ouray-Silverton_Stage_Road,_Colorado,_1901.jpg" />
+		<img src="http://upload.wikimedia.org/wikipedia/commons/8/8c/Red_Mountain_Pass,_Ouray-Silverton_Stage_Road,_Colorado,_1901.jpg" id="pic_1/>
 		<figcaption>Mountains</figcaption>
 	</figure>
 
