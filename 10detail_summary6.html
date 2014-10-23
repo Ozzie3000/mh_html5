@@ -45,11 +45,31 @@
 		font-style: bold;
 	}
 	img.triangle{
-		segtr
+		padding: 0em;
+		border: none;
+		display: inline;
 	}
 </style>
 <script type="text/javascript">
-
+	function isChrome(){
+		var chrome = navigator.userAgent.toLowerCase().indexof('chrome') > -1;
+		return chrome;
+	}function expand(){
+		if(!isChrome(){){
+			var details = document.getElementById("display_details");
+			var tri_image = document.getElementById("tri_image");
+			if(details.style.display == "block"){
+				details.style.display = "none";
+				tri_image.src = "somwhere1";
+			}else{
+				details.style.display = "block";
+				tri_image.src = "somwhere2"
+			}
+		}
+	}
+	function hide_details{
+		set
+	}
 </script>
 </head>
 <body>
