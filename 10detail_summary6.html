@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | details and summary tags w/ js</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ 
+		background-color: #eeeeee;
+		/* local */
+		/*background: url("..//pictures/background-wallpapers-60.png"); */
+		/* not local */
+		/*background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");  */
+		background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		color: white;
+		font-size: 18px;
+	}
+	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
+	img{
+		padding: 0.5em;
+		border: 0.5em dashed blue;
+	}
+	@media screen and (max-width: 479px){#pic_1{width: 200px;}}
+	@media screen and (min-width: 480px) and (max-width: 599px){#pic_1{width: 300px;}}
+	@media screen and (min-width: 600px) and (max-width: 720px){#pic_1{width: 400px;}}
+	@media screen and (min-width: 721px) and (max-width: 840px){#pic_1{width: 500px;}}
+	@media screen and (min-width: 841px) and (max-width: 960px){#pic_1{width: 600px;}}
+	@media screen and (min-width: 961px) and (max-width: 1080px){#pic_1{width: 700px;}}
+	@media screen and (min-width: 1081px) and (max-width: 1200px){#pic_1{width: 800px;}}
+	@media screen and (min-width: 1201px) and (max-width: 1320px){#pic_1{width: 900px;}}
+	@media screen and (min-width: 1321px) and (max-width: 1440px){#pic_1{width: 1000px;}}
+	@media screen and (min-width: 1441px) and (max-width: 1560px){#pic_1{width: 1200px;}}
+	@media screen and (min-width: 1561px) and (max-width: 1680px){#pic_1{width: 1300px;}}
+	@media screen and (min-width: 1681px) and (max-width: 1800px){#pic_1{width: 1400px;}}
+	@media screen and (min-width: 1801px) and (max-width: 1920px){#pic_1{width: 1600px;}}
+	stuff, img{
+		display: table;
+		margin: 0 auto;
+	}
+	figcaption{
+		font-style: bold;
+	}
+	img.triangle{
+		segtr
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<br /><br />
+	<h1>details and summary tags with JS</h1>
+
+	<img id="pic_1" src="http://mediad.publicbroadcasting.net/p/kajx/files/201407/A_bull_moose_animal_mammal.jpg" alt="bull moose" />
+	<figcaption>Bull Moose</figcaption>
+		<details>
+			<summary>
+				This is might only be supported by Chrome and Firefox 30+. Chrome to date is the only one that shows an expanding box.
+			</summary>
+			<time>10/23/2014</time>
+			<p>food this cool pic at:  http://mediad.publicbroadcasting.net/p/kajx/files/201407/A_bull_moose_animal_mammal.jpg<p>
+		</details>
+	</figure>
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+<!--10.6 -->
