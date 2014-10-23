@@ -52,9 +52,10 @@
 </style>
 <script type="text/javascript">
 	function isChrome(){
-		var chrome = navigator.userAgent.toLowerCase().indexof('chrome') > -1;
+		var chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 		return chrome;
-	}function expand(){
+	}
+	function expand(){
 		if(!isChrome()){
 			var details = document.getElementById("display_details");
 			var tri_image = document.getElementById("tri_image");
@@ -73,6 +74,9 @@
 		}
 	}
 	window.onload = function() {hide_details();};
+	if (!isChrome()){
+		document.write('<img class="triforce" id="tri_image" src="http://img1.wikia.nocookie.net/__cb20071223184721/zelda/images/thumb/2/2a/Black_Triforce.svg/35px-Black_Triforce.svg.png" onclick="expand();"> ');
+	}
 </script>
 </head>
 <body>
@@ -88,15 +92,12 @@
 			</summary>
 			<div id="display_details">
 				<time>10/23/2014</time>
-				<p>food this cool pic at:  http://mediad.publicbroadcasting.net/p/kajx/files/201407/A_bull_moose_animal_mammal.jpg<p>
+				<p>found this cool pic at:  http://mediad.publicbroadcasting.net/p/kajx/files/201407/A_bull_moose_animal_mammal.jpg<p>
 			</div>
 		</details>
 	</figure>
 
 <script type="text/javascript">
-	if (!isChrome()){
-		document.write('<img class=""triforce" id="tri_image" src="http://img1.wikia.nocookie.net/__cb20071223184721/zelda/images/thumb/2/2a/Black_Triforce.svg/35px-Black_Triforce.svg.png" onclick="expand();"> ');
-	}
 </script>
 </body>
 </html>
