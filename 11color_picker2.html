@@ -23,7 +23,11 @@
 
 </style>
 <script type="text/javascript">
-
+ window.onload = function(){
+	document.getElementById("color_pick").onchange = function(){
+		document.bgColor=this.value;
+	}
+ }
 </script>
 </head>
 <body>
@@ -31,7 +35,15 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 
-
+	<form name="form_1" id="form_1" method="post" action="#">
+		<fieldset>
+			<legend>The Legend continues</legend>
+			<p>
+				<label for="color_pick">Select a color.  Tah Tah Today Jr.</label>
+				<input type="color" id="color_pick" name="color_pick">
+			</p>
+		</fieldset>
+	</form>
 
 <script type="text/javascript">
 
