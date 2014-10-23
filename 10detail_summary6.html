@@ -73,10 +73,6 @@
 			document.getElementById("display_details").style.display="none";
 		}
 	}
-	window.onload = function() {hide_details();};
-	if (!isChrome()){
-		document.write('<img class="triforce" id="tri_image" src="http://img1.wikia.nocookie.net/__cb20071223184721/zelda/images/thumb/2/2a/Black_Triforce.svg/35px-Black_Triforce.svg.png" onclick="expand();"> ');
-	}
 </script>
 </head>
 <body>
@@ -86,6 +82,12 @@
 
 	<img id="pic_1" src="http://mediad.publicbroadcasting.net/p/kajx/files/201407/A_bull_moose_animal_mammal.jpg" alt="bull moose" />
 	<figcaption>Bull Moose</figcaption>
+	<script type="text/javascript">
+		if (!isChrome()){
+		document.write('<img class="triforce" id="tri_image" src="http://img1.wikia.nocookie.net/__cb20071223184721/zelda/images/thumb/2/2a/Black_Triforce.svg/35px-Black_Triforce.svg.png" onclick="expand();"> ');
+		window.onload = function() {hide_details();};
+	}
+	</script>
 		<details>
 			<summary>
 				This is might only be supported by Chrome and Firefox 30+. Chrome to date is the only one that shows an expanding box.
@@ -97,6 +99,7 @@
 		</details>
 	</figure>
 
+	<br /><br /><br /><br />
 <script type="text/javascript">
 </script>
 </body>
