@@ -68,7 +68,9 @@
 		}
 	}
 	function hide_details{
-		set
+		if(!isChrome(){){
+			document.getElementById("display_details").style.display="none";
+		}
 	}
 </script>
 </head>
