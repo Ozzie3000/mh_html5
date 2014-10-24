@@ -20,7 +20,11 @@
 		font-size: 18px;
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
-
+	label{
+		display: inline-block;
+		float: left;
+		width: 8em;
+	}
 </style>
 <script type="text/javascript">
 
@@ -43,12 +47,15 @@
 				<input type="text" name="contactCompany" id="contactCompany" maxlength="50" size="50" placeholder="Type the company name in this box">
 			</p>
 			<p>
-				<label for="contactPhone_a">Area Code Phone Number: </label>
+				<label for="contactPhone_a">Phone Number: </label>
 				<input type="tel" name="contactPhone_a" id="contactPhone_a" maxlength="3" size="10" placeholder="Max of 3 digits.">
-				<label for="contactPhone_b">Phone Number: </label>
+			<!--	<label for="contactPhone_b"></label>  -->
 				<input type="tel" name="contactPhone_b" id="contactPhone_b" maxlength="3" size="10" placeholder="Max of 3 digits.">
-				<label for="contactPhone_c">Phone Number: </label>
+			<!-- 	<label for="contactPhone_c"></label>  -->
 				<input type="tel" name="contactPhone_c" id="contactPhone_c" maxlength="4" size="10" placeholder="Max of 4 digits.">
+			</p>
+			<p>
+				<label></label>
 			</p>
 
 
