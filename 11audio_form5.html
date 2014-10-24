@@ -23,15 +23,59 @@
 
 </style>
 <script type="text/javascript">
-
+	function play_music() {
+	 document.getElementById("audio_1").play();
+	 document.getElementById("play").innerHTML = "Resume";
+	 document.getElementById("pause").disabled=false;
+	 document.getElementById("startover").disabled=false;
+	 document.getElementById("play").disabled=true;
+	}
+function change_volume(player, level){
+	player.volume = (level / 100);
+	document.getElementById("volumeLevel").innerHTML = level + "%";
+}
+function pause_play(player){
+	player.pause();
+	document.getElementById("play").disabled=false;
+	document.getElementById("pause").disabled=true;
+}
+function setStartPoint(player, seconds){
+	player.currentTime = seconds;
+	player.pause();
+	document.getElementById("pause").disabled=true;
+	document.getElementById("startover").disabled=true;
+	document.getElementById("play").disabled=false;
+	document.getElementById("play").innerHTML = "Play";
+}
 </script>
 </head>
-<body>
+<body onload="document.getElementById('audio_1').volume = 0.5;">
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 	<h1>Audio interface with form objects</h1>
 	
-
+	<div style="margin-left:40px;">
+	  <h1>Music with volume control</h1>
+	  <p>Use the buttons to control the player. Set the volume level using the slider. If it is not present, then type the desired volume level (0-100), and press tab. </p>
+	  <br><br>
+	  <audio id="audio_1">
+	  	<source src="romantic_guitar.mp3" type="audio/mpeg" />
+		  <source src="romantic_guitar.ogg" type="audio/ogg" />
+		  <source src="romantic_guitar.oga" type="audio/ogg" />
+		  <source src="romantic_guitar.wav" type="audio/wav" />
+			Try a different browser
+	  </audio>
+	  <br><br>
+	</div>
+	<form name="formvolume" id="formvolume" >
+		<p>
+			<input name="volume" id="volume" type="range" min="0" max="100" step="5" maxlength="3" value="50" onChange="change_volume(audio_1, volume.value);" />
+			<label for="volume" id="volumeLevel">50%</label>
+		</p>
+	</form>
+	<button id="play" onclick="play_music();">Play</button>
+	<button id="pause" disabled onclick="pause_play(audio_1);">Pause</button>
+	<button id="startover" disabled onclick="setStartPoint(audio_1, 0);">Start Over</button>
 
 
 <script type="text/javascript">
