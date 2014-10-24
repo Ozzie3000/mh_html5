@@ -23,8 +23,8 @@
 
 </style>
 <script type="text/javascript">
-	function display(dateval){
-		document.getElementById("a_date").innerHTML = dateval;
+	function display(dateVal){
+		document.getElementById("a_date").innerHTML = dateVal;
 	}
 </script>
 </head>
@@ -36,11 +36,39 @@
 	<form id="form_1" name="form_1" method="post" action="#">
 		<fieldset>
 			<legend>Date and Time objects</legend>
-			<p><label for="sum_date">Select a date. Becareful looks can kill.</label>
-			<input type="date" id="sum_date" name="sum_date" onchange="display(sum_date.value);" ></p>
+			<p>
+				<label for="sum_date">Select a date. Becareful looks can kill.</label>
+				<input type="date" id="sum_date" name="sum_date" onchange="display(sum_date.value);" >
+			</p>
 
+			<p>
+				<label for="dateTimeUTC">Select a date and a time</label>
+				<input type="datetime" id="dateTimeUTC" name="dateTimeUTC" onchange="display(dateTimeUTC.value);">
+			</p>
+
+			<p>
+				<label for="dateTimeLocal">Select a date and a time</label>
+				<input type="datetime-local" id="dateTimeLocal" name="dateTimeLocal" onChange="display(dateTimeLocal.value);">
+			</p>
+
+			<p>
+				<label for="month">Select a month</label>
+				<input type="month" id="month" name="month" onChange="display(month.value);">
+			</p>
+
+			<p>
+				<label for="week">Select a week</label>
+				<input type="week" id="week" name="week" onChange="display(week.value);">
+			</p>
+
+			<p>
+				<label for="time">Select a time</label>
+				<input type="time" id="time" name="time" onChange="display(time.value);">
+			</p>
 		</fieldset>
+	</form>
 
+	<p id="a_date"></p>
 
 <script type="text/javascript">
 
