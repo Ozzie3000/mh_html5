@@ -72,26 +72,26 @@
 				return;
 			}
 			var phoneRegEx = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
-			if(!contact.contactPhone.value.match(phoneRegEx)){
+			if(!contact.contact_phone.value.match(phoneRegEx)){
 				alert("Please enter a phone number");
-				contact.contactPhone.focus();
+				contact.contact_phone.focus();
 				return;
 			}
 			var emailRegEx = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
-			if(!contact.contactEmail.value.match(emailRegEx)){
+			if(!contact.contact_email.value.match(emailRegEx)){
 				alert("Please enter an email address");
-				contact.contactEmail.focus();
+				contact.contact_email.focus();
 				return;
 			}
-			if(isNaN(contact.contactPriority.value) || !contact.contactPriority.value){
+			if(isNaN(contact.contact_priority.value) || !contact.contact_priority.value){
 				alert("Please enter a priority between 1 and 10");
-				contact.contactPriority.focus();
+				contact.contact_priority.focus();
 				return;
 			}
-			var priority = parseInt(contact.contactPriority.value);
+			var priority = parseInt(contact.contact_priority.value);
 			if(priority < 1 || priority > 10){
 				alert("Please enter a priority between 1 and 10");
-				contact.contactPriority.focus();
+				contact.contact_priority.focus();
 				return;
 			}
 			contact.submit();
