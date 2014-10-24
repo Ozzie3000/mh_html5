@@ -33,6 +33,16 @@
 	input[type=number]{
 		text-align: right;
 	}
+	input[type=number]:invalid:out-of-range, input[type=number]:invalid{
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-image: url(thumbdown);
+	}
+	input[type=number]:vaid:in-range{
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-image: url(thumbup);
+	}
 </style>
 <script type="text/javascript">
 
