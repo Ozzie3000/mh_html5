@@ -45,7 +45,60 @@
 	}
 </style>
 <script type="text/javascript">
-
+	function checkForm(){
+		if(typeof contact.checkValidity == "undefined"){
+			//check validity in non HTML 5 compliant browsers
+			validForm = true;
+			if(!contact.contact_name.value){
+				alert("Please enter a name");
+				contact.contact_name.focus();
+				return;
+			}
+			
+			if(!contact.contact_company.value){
+				alert("Please enter a name");
+				contact.contact_name.focus();
+				return;
+			}
+			
+			if(!contact.contact_company.value){
+				alert("Please enter a company name");
+				contact.contact_company.focus();
+				return;
+			}
+			var phoneRegEx = /^\D?(\d{3})\D?\D?(\d{3})\D?(\d{4})$/;
+			if(!contact.contactPhone.value.match(phoneRegEx)){
+				alert("Please enter a phone number");
+				contact.contactPhone.focus();
+				return;
+			}
+			var emailRegEx = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+			if(!contact.contactEmail.value.match(emailRegEx)){
+				alert("Please enter an email address");
+				contact.contactEmail.focus();
+				return;
+			}
+			if(isNaN(contact.contactPriority.value) || !contact.contactPriority.value){
+				alert("Please enter a priority between 1 and 10");
+				contact.contactPriority.focus();
+				return;
+			}
+			var priority = parseInt(contact.contactPriority.value);
+			if(priority < 1 || priority > 10){
+				alert("Please enter a priority between 1 and 10");
+				contact.contactPriority.focus();
+				return;
+			}
+			contact.submit();
+		}
+		else{
+		//for HTML 5 browsers
+			validForm = contact.checkValidity();
+			if(contact.checkValidity()==true){
+				contact.submit();
+			}
+		}
+	}
 </script>
 </head>
 <body>
