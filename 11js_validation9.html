@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>HTML5 | Validation on forms</title>
+<meta charset="utf-8">
+<meta name="description" content="HTML5 demos" />
+<style type="text/css">
+	body{ 
+		background-color: #eeeeee;
+		/* local */
+		/*background: url("..//pictures/background-wallpapers-60.png"); */
+		/* not local */
+		/*background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");  */
+		background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");
+		background-attachment: fixed;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		color: white;
+		font-size: 18px;
+	}
+	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
+	input:invalid{
+		background-position: right center;
+		background-repeat: no-repeat;
+		background-image: url(http://www.classtools.net/main_area/fakebook/icons/thumbs-down.png);
+	}
+	input:required:valid{
+		background-position: right center;
+		background-repeat: no-repeat;
+		background-image: url(http://www.lajollabluebook.com/bundles/front/images/directory/category/thumbsUp.png);
+	}
+	input[type=number]{
+		text-align: right;
+	}
+	input[type=number]:invalid:out-of-range, input[type=number]:invalid{
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-image: url(http://www.classtools.net/main_area/fakebook/icons/thumbs-down.png);
+	}
+	input[type=number]:vaid:in-range{
+		background-position: left center;
+		background-repeat: no-repeat;
+		background-image: url(http://www.lajollabluebook.com/bundles/front/images/directory/category/thumbsUp.png);
+	}
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<br /><br />
+	<h1>Validation on forms</h1>
+	
+	<form method="post" action="#" name="contact">
+		<fieldset id="contact_fields">
+			<legend>Contact information</legend>
+			<p>
+				<label for="contact_name">Contact name: </label>
+				<input type="text" id="contact_name" required autofocus maxlength="50" size="55" placeholder="Type your name here" >
+			</p>
+			<p>
+				<label for="contact_company">Company name: </label>
+				<input type="text" id="contact_company" required maxlength="50" size="55" placeholder="Type the company name here" >
+			</p>
+			<p>
+				<label for="contact_phone">Phone number: </label>
+				<input type="tel" id="contact_phone" required maxlength="10" size="18" placeholder="only numbers" pattern="\d{10}">
+			</p>
+			<p>
+				<label for="contact_email">Email: </label>
+				<input type="email" id="contact_email" required maxlength="70" size="80" placeholder="your_email@something.com" pattern="^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$">
+			</p>
+			<p>
+				<label for="contact_priority">Priority: </label>
+				<input type="number" id="contact_priority"  required maxlength="2" size="5" min="1" max="10" placeholder="##"/>
+			</p>
+				<input type="submit" value="Add contact"/>
+		</fieldset>
+	</form>
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+<!-- pattern matching www.regexlib.com -->
