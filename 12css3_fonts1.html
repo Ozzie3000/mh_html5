@@ -20,7 +20,44 @@
 		font-size: 18px;
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
+	@font-face {
+    font-family: 'NashvilleRegular';
+    src: url('fonts/nashvill-webfont.eot');
+    src: url('fonts/nashvill-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/nashvill-webfont.ttf') format('ttf'),
+         url('fonts/nashvill-webfont.woff') format('woff'),
+         url('fonts/nashvill-webfont.svg#NashvilleRegular') format('svg');
+    font-weight: bold;
+	}
+	@font-face {
+	    font-family: 'BaskervilleOldFaceRegular';
+	    src: url('fonts/baskvill-webfont.eot');
+	    src: local('Baskerville Old Face Regular'), 
+			 url('fonts/baskvill-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('fonts/baskvill-webfont.woff') format('woff'),
+	         url('fonts/baskvill-webfont.ttf') format('truetype'),
+	         url('fonts/baskvill-webfont.svg#BaskervilleOldFaceRegular') format('svg');
+	}
+	h1, h2, h3{
+		font-family:NashvilleRegular, sans-serif; 
+		font-weight:bold;
+		font-variant:small-caps;
+	}
+	body{
+		font-family:BaskervilleOldFaceRegular, serif;
+	}
+	h2{
+		font-size:72pt;
+		margin-bottom:0pt;
+		margin-top:0pt;
+	}
 
+	/*transformation CSS*/
+	.leftName{
+		transform:rotate(-30deg);
+	}
+	.rightName{
+	}
 </style>
 <script type="text/javascript">
 
