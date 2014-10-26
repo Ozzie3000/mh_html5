@@ -6,11 +6,11 @@
 <meta name="description" content="HTML5 demos" />
 <style type="text/css">
 	body{ 
-		background-color: #eeeeee;
-		/* local */
-		/*background: url("..//pictures/background-wallpapers-60.png"); */
-		/* not local */
-		/*background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");  */
+		/*background-color: #eeeeee;
+		 local 
+		background: url("..//pictures/background-wallpapers-60.png"); 
+		 not local 
+		background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");  */
 		background: url("http://imagesci.com/img/2013/11/cool-planet-wallpaper-1884-hd-wallpapers.jpg");
 		background-attachment: fixed;
 		background-size: cover;
@@ -19,26 +19,26 @@
 		color: white;
 		font-size: 18px;
 	}
-	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
+	h1{ color: cyan; font-family: sans-serif; text-align: center; font-size: 24px;}
 	.border{
 		-moz-background-clip: border-box;
 		background-clip: border-box;
 		background-color: #ffff00;
-		border: 5px dashed #000000;
+		border: 10px dashed #000000;
 		padding: 10px;
 	}
-	.paddiing{
+	.padding{
 		-moz-background-clip: padding-box;
 		background-clip: padding-box;
 		background-color: #ffff00;
-		border: 5px dashed #000000;
+		border: 10px dashed #000000;
 		padding: 10px;
 	}
 	.content{
-		-moz-background-clip: padding-box;
-		background-clip: padding-box;
+		-moz-background-clip: content-box;
+		background-clip: content-box;
 		background-color: #ffff00;
-		border: 5px dashed #000000;
+		border: 10px dashed #000000;
 		padding: 10px;
 	}
 </style>
@@ -51,7 +51,20 @@
 	<br /><br />
 	<h1>background-clip</h1>
 	
+	<div class="border">
+		<h1>Border Box Clip</h1>
+	</div>
+	<br />
+		
+	<div class="padding">
+		<h1>Padding Box Clip</h1>
+	</div>
 
+	<br />
+		
+	<div class="content">
+		<h1>Content Box Clip</h1>
+	</div>
 
 
 <script type="text/javascript">
