@@ -20,7 +20,15 @@
 		font-size: 18px;
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
-
+	img_border{
+		border:1em dotted gray;
+		width:400px;
+		text-align:center;
+		-webkit-border-image:url("pic") 30 30 repeat;
+		-moz-border-image:url("pic") 30 30  round;
+		-o-border-image:url("pic") 30 30 round;
+		border-image:url("pic") 30 30 round;
+	}
 </style>
 <script type="text/javascript">
 
@@ -31,7 +39,9 @@
 	<br /><br />
 	<h1>Border image</h1>
 	
-
+	<p>Original image -->
+	<img src="pic" alt="image for the border" title="image for the border" /></p>
+	<div class="img_border"><h1>here you go</h1>
 
 
 <script type="text/javascript">
