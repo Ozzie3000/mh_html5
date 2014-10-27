@@ -32,6 +32,28 @@
 		-webkit-transition-timing-function: ease-in;
 		-webkit-transistion-delay: 2s;
 	}
+	div.box:active{
+		background-color: blue;
+	}
+	.pic_frame{
+		display: table;
+		margin: 0 auto;
+		border: 50px solid brown;
+		width: 495px;
+		height: 570px;
+		-webkit-border-image: url("https://0.s3.envato.com/files/82227275/GR_fishbone_pattern_THUMB.jpg") 30 30 stretch;
+		-moz-border-mage: url("https://0.s3.envato.com/files/82227275/GR_fishbone_pattern_THUMB.jpg") 30 30 stretch;
+		-o-border-image: url("https://0.s3.envato.com/files/82227275/GR_fishbone_pattern_THUMB.jpg") 30 30 stretch;
+		border-image: url("https://0.s3.envato.com/files/82227275/GR_fishbone_pattern_THUMB.jpg") 30 30 stretch;
+	}
+	figure{
+		padding: 0px;
+		opacity: 0;
+		-o-transition: opacity 3s;
+		-moz-transition: opacity 3s;
+		-webkit-transition: opacity 3s;
+		transition: opacity 3s;
+	}
 </style>
 <script type="text/javascript">
 
@@ -45,7 +67,7 @@
 	<p id="thank">Click and hold the black box for 5 seconds to receive direcions.</p>
 	<div class="pic_frame">
 		<figure id="transit">
-			<img src="pic" alt="A picture" width="500" height="500">
+			<img src="http://media-cache-ec0.pinimg.com/736x/7c/85/05/7c850557ca327da670f21415a7d6b4f6.jpg" width="500" height="500">
 			<figcaption>This is a picture</figcaption>
 		</figure>
 	</div>
@@ -59,3 +81,4 @@
 </script>
 </body>
 </html>
+url("https://0.s3.envato.com/files/82227275/GR_fishbone_pattern_THUMB.jpg") 30 30 round
