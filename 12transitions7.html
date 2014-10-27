@@ -24,8 +24,8 @@
 		text-align: center;
 	}
 	div.box{
-		width: 120px;
-		height: 120px;
+		width: 420px;
+		height: 30px;
 		background-color: black;
 		-webkit-transition-property: background-color;
 		-webkit-transition-duration: 5s;
@@ -69,6 +69,7 @@
 		document.getElementById("transit").addEventListener("mozTransitionEnd", function(){actionMessage}, false);
 		document.getElementById("transit").addEventListener("transitionEnd", function(){actionMessage()}, false);
 	}
+	window.onload = function(){setHandlers();};
 </script>
 </head>
 <body>
