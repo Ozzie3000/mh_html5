@@ -60,7 +60,15 @@
 
 </style>
 <script type="text/javascript">
-	
+	function actionMessage(){
+		document.getElementById("thank").innerHTML="Thank you for hovering!";
+	}
+	function setHandlers{
+		document.getElementById("transit").addEventListener("webkitTransitionEnd", function(){actionMessage()}, false);
+		document.getElementById("transit").addEventListener("oTransitionEnd", function(){actionMessage()}, false);
+		document.getElementById("transit").addEventListener("mozTransitionEnd", function(){actionMessage}, false);
+		document.getElementById("transit").addEventListener("transitionEnd", function(){actionMessage()}, false);
+	}
 </script>
 </head>
 <body>
