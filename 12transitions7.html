@@ -16,7 +16,7 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center center;
-		color: white;
+		/*color: white;  */
 		font-size: 18px;
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
@@ -49,21 +49,23 @@
 	figure{
 		padding: 0px;
 		opacity: 0;
-		-o-transition: opacity 3s;
-		-moz-transition: opacity 3s;
 		-webkit-transition: opacity 3s;
+		-moz-transition: opacity 3s;
+		-o-transition: opacity 3s;
 		transition: opacity 3s;
 	}
 	figure:hover{
-		opacity: 1s;
+		opacity: 1;
 	}
-
+	#thank{
+		color: white;
+	}
 </style>
 <script type="text/javascript">
 	function actionMessage(){
 		document.getElementById("thank").innerHTML="Thank you for hovering!";
 	}
-	function setHandlers{
+	function setHandlers(){
 		document.getElementById("transit").addEventListener("webkitTransitionEnd", function(){actionMessage()}, false);
 		document.getElementById("transit").addEventListener("oTransitionEnd", function(){actionMessage()}, false);
 		document.getElementById("transit").addEventListener("mozTransitionEnd", function(){actionMessage}, false);
