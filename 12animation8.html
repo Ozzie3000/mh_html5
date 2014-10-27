@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="description" content="HTML5 demos" />
 <style type="text/css">
-	body{ 
+	.body{ 
 		background-color: #eeeeee;
 		/* local */
 		/*background: url("..//pictures/background-wallpapers-60.png"); */
@@ -20,7 +20,43 @@
 		font-size: 18px;
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
-
+	h2{text-align: center, color: white;}
+	/*********  duration iteration-count direction for body properties.  shorthad  ****/
+	body{
+		background-color: red;
+		-webkit-animation:colorChange 12s infinite alternate;
+		-moz-animation:colorChange 12s infinite alternate;
+		-o-animation: colorChange 12s infinite alternate;
+		animation: colorChange 12s infinite alternate;
+	}
+	@-webkit-keyframes colorChange{
+		0% {background-color: red;}
+		12.5% {background-color: orange;}
+		50% {background-color: yellow;}
+		87.5% {background-color: orange;}
+		100% {background-color: red;}
+	}
+	@-moz-keyframes colorChange{
+		0% {background-color: red;}
+		12.5% {background-color: orange;}
+		50% {background-color: yellow;}
+		87.5% {background-color: orange;}
+		100% {background-color: red;}
+	}
+	@-o-keyframes colorChange{
+		0% {background-color: red;}
+		12.5% {background-color: orange;}
+		50% {background-color: yellow;}
+		87.5% {background-color: orange;}
+		100% {background-color: red;}
+	}
+	@keyframes colorChange{
+		0% {background-color: red;}
+		12.5% {background-color: orange;}
+		50% {background-color: yellow;}
+		87.5% {background-color: orange;}
+		100% {background-color: red;}
+	}
 </style>
 <script type="text/javascript">
 
@@ -30,6 +66,7 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 	<h1>A very simple animation using CSS</h1>
+	<h2>Watch the colors change in the fall</h2>
 	
 
 
