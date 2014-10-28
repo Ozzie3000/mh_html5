@@ -160,17 +160,72 @@
 		animation:wordColor 2s ease-out 8.6s;
 	}
 
+	@-webkit-keyframes wordColor{
+		0% {color:black;}
+		1% {color:red;}
+		99% {color:red;}
+		100% {color:black;}
+	}
+	@-moz-keyframes wordColor{
+		0% {color:black;}
+		1% {color:red;}
+		99% {color:red;}
+		100% {color:black;}
+	}
+	@-o-keyframes wordColor{
+		0% {color:black;}
+		1% {color:red;}
+		99% {color:red;}
+		100% {color:black;}
+	}
 	@keyframes wordColor{
-		0% {color: black;}
-		1% {color: red;}
-		99% {color: red;}
-		100% {color: black;}
+		0% {color:black;}
+		1% {color:red;}
+		99% {color:red;}
+		100% {color:black;}
+	}
+
+	@-webkit-keyframes showline{
+		0% {font-size:0em;z-index:1;}
+		1% {font-size:2em;z-index:10;}
+		99% {font-size:2em;z-index:10;}
+		100% {font-size:0em;z-index:1;}
+	}
+	@-moz-keyframes showline{
+		0% {font-size:0em;z-index:1;}
+		1% {font-size:1em;z-index:10;}
+		99% {font-size:1em;z-index:10;}
+		100% {font-size:0em;z-index:1;}
+	}
+	@-o-keyframes showline{
+		0% {font-size:0em;z-index:1;}
+		1% {font-size:1em;z-index:10;}
+		99% {font-size:1em;z-index:10;}
+		100% {font-size:0em;z-index:1;}
 	}
 	@keyframes showline{
-		0% {font-size: 0em; z-index: 1;}
-		1%  {font-size: 1em; z-index: 10;}
-		99%  {font-size: 1em; z-index: 10;}
-		100% {font-size: 0em; z-index: 1;}
+		0% {font-size:0em;z-index:1;}
+		1% {font-size:1em;z-index:10;}
+		99% {font-size:1em;z-index:10;}
+		100% {font-size:0em;z-index:1;}
+	}
+
+	#line2{
+		position:absolute;
+		font-size:0;
+		z-index:2;
+	}
+
+	#line3{
+		position:absolute;
+		font-size:0;
+		z-index:3;
+	}
+
+	#line4{
+		position:absolute;
+		font-size:0;
+		z-index:4;
 	}
 </style>
 <script type="text/javascript">
