@@ -31,7 +31,7 @@
 	function readList(){
 		var content = document.getElementById("list").innerHTML.toLowerCase();
 		var songs = content.split("<li>");
-		var rightSongs = new Array("song1","song2","song3","song4");
+		var rightSongs = new Array("guitar","guitar","guitar","guitar");
 		var right=0;
 		var ltp;
 		for(var s in songs){
@@ -60,17 +60,17 @@ function playMusic() {
 	<br /><br />
 	<h1>More editable areas.</h1>
 	
-	<div>
+	<div id="guess">
 		<audio id="audio_1" preload="auto">
-		  <source src="music/.ogg" type="audio/ogg" />
-		  <source src="music/.mp3" type="audio/mpeg" />
-		  <source src="music/.wav" type="audio/wav" />  
+		  <source src="../audio/romantic_guitar.ogg" type="audio/ogg" />
+		  <source src="../audio/romantic_guitar.mp3" type="audio/mpeg" />
+		  <source src="../audio/romantic_guitar.wav" type="audio/wav" />  
 				Your browser needs an upgrade to see this
 		  </audio>
 	</div>
 	<br><br>
 
-	<img src="images/play.png" alt="Click to play" onclick="playMusic();"/>
+	<img s="http://www.clker.com/cliparts/c/5/R/P/7/A/blue-play-th.png" alt="Click to play" onclick="playMusic();"/>
 	<p>Click the play button to start the medley. In the box below, type the names of the songs you hear. 
 	Choose from Beethoven's Fifth, Beethoven's Ninth, Dixie, Taps. 
 	<br /><br /><strong>Please be sure to leave the list numbers in with your answers.</strong></p>
@@ -82,7 +82,7 @@ function playMusic() {
 			<li>Song</li>
 		</ol>
 	 </section>
-	 <img src="images/score.png" alt="click to score" onclick="readList();">
+	 <img s="http://d5xyot7fkxv4t.cloudfront.net/media/wysiwyg/icons/total-displays-cms-button-v2-versatile.jpg" alt="click to score" onclick="readList();">
 	 <br /><br />
 
 	 <div id="correct">
@@ -90,7 +90,10 @@ function playMusic() {
 	 </div>
 
 <script type="text/javascript">
-
+	function tell(){
+		alert("just type: \nguitar \nby each number");
+	}
+	setTimeout(function(){tell()}, 5500);
 </script>
 </body>
 </html>
