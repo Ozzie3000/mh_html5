@@ -19,6 +19,9 @@
 	.wall:focus{
 		border: thin solid red;
 	}
+	section{
+		border: thin solid red;
+	}
 </style>
 <script type="text/javascript">
 	function showWall(){
@@ -37,7 +40,7 @@
 	function storeWriting(){
 		var wall_writing = document.getElementById("wall").innerHTML;
 		if((wall_writing == null)||(wall_writing == "Replace this text")||(wall_writing == "")){
-			alert("you must change the red text first");
+			alert("Please Replace the red text");
 		}else{
 			localStorage.setItem("wall", wall_writing);
 		}
