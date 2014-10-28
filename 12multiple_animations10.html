@@ -229,7 +229,6 @@
 	}
 </style>
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
@@ -237,6 +236,13 @@
 	<br /><br />
 	<h1>Karaoke anyone? Or multiple animations with CSS</h1>
 	
+	<audio id="audio_1" loop>
+	  <source src="../audio/romantic_guitar.ogg" type="audio/ogg" />
+	  <source src="../audio/romantic_guitar.mp3" type="audio/mpeg" />
+	  <source src="../audio/romantic_guitar.wav" type="audio/wav" />  
+		Your browser does not support the audio element
+  </audio>
+
 	<div id="line1">
 		<p>
 			<span id="word1-1">word</span>
@@ -271,8 +277,15 @@
 		</p>
 	</div>
 
+<br /><br />
+
+	
 
 <script type="text/javascript">
+	function playmusic(){
+		document.getElementById("audio_1").play();
+	}
+	setTimeout(playmusic(), 1000);
 </script>
 </body>
 </html>
