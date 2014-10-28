@@ -36,8 +36,34 @@
 	<br /><br />
 	<h1>More editable areas.</h1>
 	
+	<div>
+		<audio id="audio_1" preload="auto">
+		  <source src="music/.ogg" type="audio/ogg" />
+		  <source src="music/.mp3" type="audio/mpeg" />
+		  <source src="music/.wav" type="audio/wav" />  
+				Your browser needs an upgrade to see this
+		  </audio>
+	</div>
+	<br><br>
 
+	<img src="images/play.png" alt="Click to play" onClick="playmusic();"/>
+	<p>Click the play button to start the medley. In the box below, type the names of the songs you hear. 
+	Choose from Beethoven's Fifth, Beethoven's Ninth, Dixie, Taps. 
+	<br /><br /><strong>Please be sure to leave the list numbers in with your answers.</strong></p>
+	 <section id="list" class="wall" contenteditable="true">
+		<ol>
+			<li>Song</li>
+			<li>Song</li>
+			<li>Song</li>
+			<li>Song</li>
+		</ol>
+	 </section>
+	 <img src="images/score.png" alt="click to score" onClick="readList();">
+	 <br /><br />
 
+	 <div id="correct">
+	 &nbsp;
+	 </div>
 
 <script type="text/javascript">
 
