@@ -11,7 +11,7 @@
 		font-size: 18px;
 	}
 	h1{ color: blue; font-family: sans-serif; text-align: center; font-size: 28px;}
-
+	h3{ text-align: center;}
 	.wall{
 		width: 25em;
 		margin: 0em;
@@ -21,13 +21,26 @@
 	}
 </style>
 <script type="text/javascript">
-	function readWall(){
+	function showWall(){
+		var wall_writing = localStorage.getItem("wall");
+		if((wall_writing == null)||(wall_writing == "")){
+			document.getElementById("wall").innerHTML = "Replace this text";
+		}else{
+			document.getElementById("wall").innerHTML = wall_writing
+		}
+	}
+	function readWriting(){
 		var content = document.getElementById("wall").innerHTML;
 		content = "Thank you for your post: <br />" + content;
-		document.getElementById("something").innerHTML = content;
+		document.getElementById("new_text").innerHTML = content;
 	}
-	function sf(){
-		stuff
+	function storeWriting(){
+		var wall_writing = document.getElementById("wall").innerHTML;
+		if((wall_writing == null)||(wall_writing == "Replace this text")||(wall_writing == "")){
+			alert("you must change the red text first");
+		}else{
+			localStorage.setItem("wall", wall_writing);
+		}
 	}
 </script>
 </head>
@@ -35,12 +48,18 @@
 	<input type="button" value="Refreshness" onclick="location.reload()" />
 	<br /><br />
 	<h1>Editable regions for user input</h1>
-	
-
-
+	<h3>Can you see the writing on the wall? Go ahead change it.</h3>
+	<section id="wall" class="wall" contenteditable="true" style="color:red">
+		Replace this text
+	</section>
+	<img src="http://www.homewoodecommerce.com/images/products/extpb-half-ot1a2.jpg" alt="push this button" title="push this button" onclick="readWriting();storeWriting();">
+	<br /><br /><br />
+	<section id="new_text" class="wall">
+		&nbsp;
+	</section>
 
 <script type="text/javascript">
-
+	window.onload = function(){showWall();};
 </script>
 </body>
 </html>
