@@ -37,6 +37,18 @@
 		-o-animation: wordColor .5s ease-out 0s;
 		animation: wordColor .5s ease-out 0s;
 	}
+	@keyframes wordColor{
+		0% {color: black;}
+		1% {color: red;}
+		99% {color: red;}
+		100% {color: black;}
+	}
+	@keyframes showline{
+		0% {font-size: 0em; z-index: 1;}
+		1%  {font-size: 1em; z-index: 10;}
+		99%  {font-size: 1em; z-index: 10;}
+		100% {font-size: 0em; z-index: 1;}
+	}
 </style>
 <script type="text/javascript">
 
