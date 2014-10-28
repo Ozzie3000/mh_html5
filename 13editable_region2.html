@@ -28,7 +28,31 @@
 	}
 </style>
 <script type="text/javascript">
+	function readList(){
+		var content = document.getElementById("list").innerHTML.toLowerCase();
+		var songs = content.split("<li>");
+		var rightSongs = new Array("song1","song2","song3","song4");
+		var right=0;
+		var ltp;
+		for(var s in songs){
+			ltp= songs[s].indexOf("<");	
+			songs[s] = songs[s].substring(0,ltp);
+			if(songs[s] == rightSongs[s -1]){
+				right ++;
+			}
+		}
 
+		if(right == 4){
+			document.getElementById("correct").innerHTML = "Good job! You got them all right!";
+		}
+		else{
+		document.getElementById("correct").innerHTML = "OOOH So close, you got " + right + " right!";
+		}
+}
+
+function playMusic() {
+ document.getElementById("audio_1").play();
+}
 </script>
 </head>
 <body>
@@ -46,7 +70,7 @@
 	</div>
 	<br><br>
 
-	<img src="images/play.png" alt="Click to play" onClick="playmusic();"/>
+	<img src="images/play.png" alt="Click to play" onclick="playMusic();"/>
 	<p>Click the play button to start the medley. In the box below, type the names of the songs you hear. 
 	Choose from Beethoven's Fifth, Beethoven's Ninth, Dixie, Taps. 
 	<br /><br /><strong>Please be sure to leave the list numbers in with your answers.</strong></p>
@@ -58,7 +82,7 @@
 			<li>Song</li>
 		</ol>
 	 </section>
-	 <img src="images/score.png" alt="click to score" onClick="readList();">
+	 <img src="images/score.png" alt="click to score" onclick="readList();">
 	 <br /><br />
 
 	 <div id="correct">
