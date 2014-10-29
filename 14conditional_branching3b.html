@@ -32,7 +32,11 @@
 		cursor: crosshair;
 		background: blue;
 	}
-
+	.results{
+		margin-left: 30px;
+		font-family: Georgia;
+		color: red;
+	}
 </style>
 <script type="text/javascript">
 
@@ -45,7 +49,9 @@
 
 	<input id="fbtn" class="btn1" type="button" value="Random Generator" onclick="rando();" />
 	<input class="btn1" type="button" value="show" onclick="show();" />
-	<div>
+	<div style="height:20px;"></div>
+
+	<div class="results">
 		<section id="here0">&nbsp;</section>
 		<br />
 		<section id="here1">&nbsp;</section>
@@ -58,13 +64,18 @@
 	function rando(){
 		var a = (Math.floor(Math.random()*20));
 		this.a = parseInt(a);
+		document.getElementById("here0").innerHTML = "Too high";
+		document.getElementById("here1").innerHTML = "Just right";
+		document.getElementById("here2").innerHTML = "Too low";
 	}
 	function show(){
 		if(a>10){
-		document.getElementById("here1").innerHTML = "The variable a is greater than 10; a = "+a;
+			document.getElementById("here0").innerHTML = "The variable a is greater than 10; a = "+a;
+		}else if(a == 10){
+			document.getElementById("here1").innerHTML = "The variable a is 10";
 		}else{
-			document.getElementById("here2").innerHTML = "The variable a is less than 10; a = "+a;
-	}
+			document.getElementById("here2").innerHTML = "The variable a is lower than 10; a = "+a;
+		}
 	}
 	
 </script>
