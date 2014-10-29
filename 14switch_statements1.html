@@ -53,26 +53,30 @@
 
 <script type="text/javascript">
 	function rando(){
-		var a = (Math.floor(Math.random()*30));
+		var a = (Math.floor(Math.random()*5));
 		this.a = parseInt(a);
-		document.getElementById("here0").innerHTML = "Too high";
-		document.getElementById("here1").innerHTML = "Just right";
-		document.getElementById("here2").innerHTML = "Too low";
-		document.getElementById("here3").innerHTML = "Way too low";
+		document.getElementById("here0").innerHTML = "Case 0";
+		document.getElementById("here1").innerHTML = "Case 1";
+		document.getElementById("here2").innerHTML = "Case 2";
+		document.getElementById("here3").innerHTML = "Case 3";
+		document.getElementById("here4").innerHTML = "Case 4";
 	}
 	function show(){
-		if(a>20){
-			document.getElementById("here0").innerHTML = "The variable a is greater than 20; a = "+a;
-		}
-		if(a <= 20 && a >= 15){
-			document.getElementById("here1").innerHTML = "The variable a is between 20 and 15. a = "+a;
-		}
-		if(a <= 14 && a >= 10){
-			document.getElementById("here2").innerHTML = "The variable a is between 14 and 10. a = "+a;
-		}
-		if(a < 10){
-			document.getElementById("here3").innerHTML = "The variable a is less than 10. a = "+a;
-		}
+		switch(a){
+			case 0:
+				document.getElementById("here0").innerHTML = "The variable a is 0";
+			break;
+			case 1:
+				document.getElementById("here1").innerHTML = "The variable a is 1";
+			break;
+			case 2:
+				document.getElementById("here2").innerHTML = "The variable a is 2";
+			break;
+			case 3:
+				document.getElementById("here3").innerHTML = "The variable a is 3";
+			break;
+			default:
+				document.getElementById("here4").innerHTML = "The variable a is greater than 3";
 	}
 </script>
 </body>
