@@ -23,7 +23,14 @@
 
 </style>
 <script type="text/javascript">
-
+	function count_to(x){
+		x = prompt("Ok pick a number 1-50");
+		this.z = x;
+		for (i=0; i<=z; i++){
+			document.write("Counting: "+ i);
+			document.write("<br />");
+		}
+	}
 </script>
 </head>
 <body>
@@ -31,11 +38,14 @@
 	<br /><br />
 	<h1>for loop or is is loop for? Et </h1>
 	
-
-
+	<p>Lets count from 0 to x.  You pick x.</p>
+	<div>
+		<p id="here">&nbsp;</p>
+	</div>
+	
 
 <script type="text/javascript">
-
+	setTimeout(function(){count_to();}, 3000);
 </script>
 </body>
 </html>
