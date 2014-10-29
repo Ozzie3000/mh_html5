@@ -20,6 +20,18 @@
 		font-size: 18px;
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
+	#fbtn{ margin-left: 30px;}
+	.btn1{
+		padding: 15px;
+		margin-right: 20px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	#rere:hover,.btn1:hover{
+		cursor: crosshair;
+		background: blue;
+	}
 
 </style>
 <script type="text/javascript">
@@ -27,15 +39,34 @@
 </script>
 </head>
 <body>
-	<input type="button" value="Refreshness" onclick="location.reload()" />
+	<input id="rere" type="button" value="Refreshness" onclick="location.reload();" />
 	<br /><br />
 	<h1>more conditional branching</h1>
-	
 
+	<input id="fbtn" class="btn1" type="button" value="Random Generator" onclick="rando();" />
+	<input class="btn1" type="button" value="show" onclick="show();" />
+	<div>
+		<section id="here0">&nbsp;</section>
+		<br />
+		<section id="here1">&nbsp;</section>
+		<br />
+		<section id="here2">&nbsp;</section>
+	</div>
 
 
 <script type="text/javascript">
-
+	function rando(){
+		var a = (Math.floor(Math.random()*20));
+		this.a = parseInt(a);
+	}
+	function show(){
+		if(a>10){
+		document.getElementById("here1").innerHTML = "The variable a is greater than 10; a = "+a;
+		}else{
+			document.getElementById("here2").innerHTML = "The variable a is less than 10; a = "+a;
+	}
+	}
+	
 </script>
 </body>
 </html>
