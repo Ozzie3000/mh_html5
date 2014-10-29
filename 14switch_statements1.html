@@ -52,7 +52,28 @@
 
 
 <script type="text/javascript">
-
+	function rando(){
+		var a = (Math.floor(Math.random()*30));
+		this.a = parseInt(a);
+		document.getElementById("here0").innerHTML = "Too high";
+		document.getElementById("here1").innerHTML = "Just right";
+		document.getElementById("here2").innerHTML = "Too low";
+		document.getElementById("here3").innerHTML = "Way too low";
+	}
+	function show(){
+		if(a>20){
+			document.getElementById("here0").innerHTML = "The variable a is greater than 20; a = "+a;
+		}
+		if(a <= 20 && a >= 15){
+			document.getElementById("here1").innerHTML = "The variable a is between 20 and 15. a = "+a;
+		}
+		if(a <= 14 && a >= 10){
+			document.getElementById("here2").innerHTML = "The variable a is between 14 and 10. a = "+a;
+		}
+		if(a < 10){
+			document.getElementById("here3").innerHTML = "The variable a is less than 10. a = "+a;
+		}
+	}
 </script>
 </body>
 </html>
