@@ -55,7 +55,28 @@
 	var wagon = new Image(); //the wagon
 	var wagon_x = 150; // x-coord for wagon
 	var wagon_y = 250; // y-coord for wagon
+	var wagonslice = 0; // x-coord to slice wagon image
 
+	canvas_1 = document.getElementById("canvas_1");
+	contex = canvas_1.getContext("2d");
+	sky.src = "skypic";
+	skyline.src = "skylinepic";
+	wagon.src = "wagonpic";
+
+	setInterval(draw, 10);
+	window.addEventListener("keydown", doKeyDown,true);
+
+	function rectang(x,y,w,h){
+		contex.beginPath();
+		contex.rectang(x,y,w,h);
+		contex.closePath();
+		contex.fill();
+		contex.stroke();
+	}
+
+	function doKeyDown(e){
+		switch (e.keyCode
+	}
 </script>
 </body>
 </html>
