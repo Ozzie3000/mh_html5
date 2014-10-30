@@ -52,6 +52,7 @@
 	var sky_x = 0; // x-coord to slice sky image
 	var skyline = new Image(); //skyline image
 	var skyline_dx = 5; //amount to move skyline image
+	var skyline_x = 0; //x-coord to slice skyline image
 	var wagon = new Image(); //the wagon
 	var wagon_x = 150; // x-coord for wagon
 	var wagon_y = 250; // y-coord for wagon
@@ -75,7 +76,34 @@
 	}
 
 	function doKeyDown(e){
-		switch (e.keyCode
+		switch (e.keyCode){
+			case 37:  /* code for left arrow */
+				if ((sky_x _ sky_dx) > 2){
+					sky_x -= sky_dx;
+				}else{
+					sky_x = 400;
+				}
+				if ((skyline_x + skyline_dx) > 5){
+					skyline_x -= skyline_dx;
+				}else{
+					skyline_x = 398;
+				}
+				if (wagonslice > 0){
+					wagonslice -= 45;
+				}else {
+					wagonslice = 90;
+				}
+				break;
+			case 39: /* code for right arrow */
+				if ((sky_x + sky_dx) < (400 - sky_dx)){
+					sky_x += sky_dx;
+				}else{
+					sky_x = 0;
+				}
+				if ((skyline_x + skyline_dx) < (400 - skyline_dx)){
+					skyline_x += skyline_dx;
+				}
+		}
 	}
 </script>
 </body>
