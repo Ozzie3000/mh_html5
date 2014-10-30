@@ -29,6 +29,7 @@
 		background-color: white;
 		border: 5px blue solid;
 	}
+	#desc{font-family: Georgia; font-weight: 700; font-size: 16px;}
 </style>
 <script type="text/javascript">
 
@@ -39,7 +40,47 @@
 	<br /><br />
 	<h1></h1>
 	
+	<div id="canvas_wrapper">
+		<canvas id="canvas_1" width="800" height="500" onclick="create_image()">
+			Your browser doesn't support the canvas! Try another browser.
+		</canvas>
+		<br>
 
+		Shape:&nbsp;&nbsp;
+		<select id="shapetype" name="shapetype">
+			<option value="sine" >sine</option> 
+			<option value="cosine" >cosine</option>
+		</select>
+		&nbsp;&nbsp;&nbsp;Frequency&nbsp;&nbsp;
+		<select id="frequency" name="frequency">
+			<option value=50 >50</option> 
+			<option value=100 >100</option>
+			<option value=150 >150</option> 
+			<option value=200 >200</option>
+			<option value=300 >300</option> 
+			<option value=400 >400</option>
+			<option value=500 >500</option> 
+		</select>
+		&nbsp;&nbsp;&nbsp;Amplitude&nbsp;&nbsp;
+		<select id="amplitude" name="amplitude">
+			<option value=50 >50</option> 
+			<option value=100 >100</option>
+			<option value=150 >150</option> 
+			<option value=200 >200</option>
+			<option value=300 >300</option> 
+			<option value=400 >400</option>
+			<option value=500 >500</option>
+		 </select>
+		<br><br>
+
+		<p id="desc">select shape, cycle frequency, and amplitude; then click once on the canvas</p>
+		<br /><br />
+		
+		<div id="description">
+		</div>
+		<br />
+		<a href="index.html">Home</a>
+	</div>
 
 
 <script type="text/javascript">
