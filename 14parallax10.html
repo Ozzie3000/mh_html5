@@ -57,9 +57,9 @@
 
 	canvas_1 = document.getElementById("canvas_1");
 	contex = canvas_1.getContext("2d");
-	bkground.src = "pic1";
+	bkground.src = "http://3.bp.blogspot.com/-DoXTOBnylv4/T7wAeo1p0KI/AAAAAAAACKk/wZEVx0Wfwnw/s400/photoprompt+oak+trees.jpg";
 	foreground.src = "pic2";
-	setInterVal(draw, 10);
+	setInterval(draw, 10);
 
 	window.addEventListener('keydown', doKeyDown,true);
 
@@ -93,7 +93,8 @@
 	} //end of function doKeyDown
 
 	function draw(){
-		
+		contex.drawImage(bkground, bkground_x, 0, 300, 300, 0, 0, 400, 400);
+		contex.drawImage(foreground, foreground_x, 0, 300, 300, 0, 0, 400, 400)
 	}
 </script>
 </body>
