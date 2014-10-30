@@ -96,7 +96,7 @@
 		var amplitude=document.getElementById("amplitude").value;
 		switch (shapetype) {
 		case "sine":
-			for (i=0; i< 500; i++) {
+			for (i=0; i< 800; i++) {
 				i2=(Math.sin(i * ((2 * Math.PI) / frequency)) * amplitude + 300);         
 				contex.lineTo(i,i2);
 				contex.stroke();
@@ -104,7 +104,7 @@
 		document.getElementById("description").innerHTML="The Sine Function"; 
 		break;
 		case "cosine":
-			for (i=0; i< 500; i++) {
+			for (i=0; i< 800; i++) {
 				i2=(Math.cos(i * ((2 * Math.PI) / frequency)) * amplitude + 300);       
 				contex.lineTo(i,i2);
 				contex.stroke();
