@@ -39,13 +39,13 @@
 	<h1>Parallax 2</h1>
 	
 	<div class="canvas_wrapper">
-		<canvas id="canvas_1" width="400" height="300">Try a different browser</canvas>
+		<canvas id="canvas_1" width="400" height="400">Try a different browser</canvas>
 		<br /><br />
 	</div>
 
 
 <script type="text/javascript">
-	var h = 300; //canvas height we set up there
+	var h = 400; //canvas height we set up there
 	var w = 400; //canvas width we set up there
 	var sky = new Image(); //sky portion
 	var sky_dx = 2; //amount to scroll to help with parallax effect
@@ -60,11 +60,11 @@
 
 	canvas_1 = document.getElementById("canvas_1");
 	contex = canvas_1.getContext("2d");
-	sky.src = "http://www.rigel.org.uk/blog/megan/images/n1058ferguson_banner.jpg";
+	sky.src = "http://fc06.deviantart.net/fs71/f/2010/186/a/6/Night_Sky_by_Skystalker.png";
 	skyline.src = "http://www.thesupers.tv/images/city_nobg.png";
 	wagon.src = "http://a.deviantart.net/avatars/t/a/tardis-hugger.jpg?1";
 
-	setInterval(draw, 3000);
+	setInterval(draw, 10);
 	window.addEventListener("keydown", doKeyDown, true);
 
 	function rect(x,y,w,h){
@@ -118,7 +118,7 @@
 		contex.fillStyle = "black";
 		rect(0,0,w,h);
 		contex.drawImage(sky, sky_x, 0, 300, 300, 0, 0, 400, 400);
-		contex.drawImage(skyline, skyline_x, 0, 300, 300, 0, 0, 400, 400);
+		contex.drawImage(skyline, skyline_x, 0, 300, 300, 0, 200, 400, 400);
 		contex.drawImage(wagon, wagonslice, 0, 45, 39, wagon_x, wagon_y, 32, 32);
 	}
 </script>
