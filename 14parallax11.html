@@ -21,9 +21,16 @@
 	}
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
 
+	.canvas_wrapper{
+		margin-top: 5%;
+		margin-left: 5%;
+	}
+	#canvas_1{
+		background-color: black;
+		border: 5px blue solid;
+	}
 </style>
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
@@ -31,10 +38,23 @@
 	<br /><br />
 	<h1>Parallax 2</h1>
 	
-
+	<div class="canvas_wrapper">
+		<canvas id="canvas_1" width="400" height="300">Try a different browser</canvas>
+		<br /><br />
+	</div>
 
 
 <script type="text/javascript">
+	var h = 300; //canvas height we set up there
+	var w = 400; //canvas width we set up there
+	var sky = new Image(); //sky portion
+	var sky_dx = 2; //amount to scroll to help with parallax effect
+	var sky_x = 0; // x-coord to slice sky image
+	var skyline = new Image(); //skyline image
+	var skyline_dx = 5; //amount to move skyline image
+	var wagon = new Image(); //the wagon
+	var wagon_x = 150; // x-coord for wagon
+	var wagon_y = 250; // y-coord for wagon
 
 </script>
 </body>
