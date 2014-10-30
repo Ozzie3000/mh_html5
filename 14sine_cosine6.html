@@ -40,7 +40,7 @@
 	<br /><br />
 	<h1></h1>
 	
-	<div id="canvas_wrapper">
+	<div class="canvas_wrapper">
 		<canvas id="canvas_1" width="800" height="500" onclick="create_image()">
 			Your browser doesn't support the canvas! Try another browser.
 		</canvas>
@@ -84,7 +84,37 @@
 
 
 <script type="text/javascript">
+	var my_canvas=document.getElementById("canvas_1");
+	var contex=my_canvas.getContext('2d');
 
+	function create_image() {
+	 	my_canvas.width = my_canvas.width; //clears canvas
+		contex.strokeStyle='rgb(0,0,0)';
+		contex.lineWidth="2";
+		var shapetype=document.getElementById("shapetype").value;
+		var frequency=document.getElementById("frequency").value;
+		var amplitude=document.getElementById("amplitude").value;
+		switch (shapetype) {
+		case "sine":
+			for (i=0; i< 500; i++) {
+				i2=(Math.sin(i * ((2 * Math.PI) / frequency)) * amplitude + 300);         
+				contex.lineTo(i,i2);
+				contex.stroke();
+			}
+		document.getElementById("description").innerHTML="The Sine Function"; 
+		break;
+		case "cosine":
+			for (i=0; i< 500; i++) {
+				i2=(Math.cos(i * ((2 * Math.PI) / frequency)) * amplitude + 300);       
+				contex.lineTo(i,i2);
+				contex.stroke();
+			}
+		document.getElementById("description").innerHTML="The Cosine Function"; 
+		break;
+		default:
+		// not applicable
+		}  // end switch
+	} // end of function
 </script>
 </body>
 </html>
