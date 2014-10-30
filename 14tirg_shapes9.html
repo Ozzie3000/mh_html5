@@ -68,7 +68,98 @@
 
 
 <script type="text/javascript">
-
+	var my_canvas=document.getElementById("canvas1");
+	var contex=my_canvas.getContext('2d');
+	function create_image() {
+	my_canvas.width = my_canvas.width; //clears canvas
+	contex.strokeStyle='rgb(0,0,0)';
+	contex.lineWidth="2";
+	var shapetype=document.getElementById("shapetype").value;
+	switch (shapetype) {
+	case "obtuseangle":
+	 angle(50,50,50,200,200,280);
+	 document.getElementById("description").innerHTML="An obtuse angle is one of less than 90 degrees";
+	break;
+	case "acuteangle":
+	 angle(50,50,50,200,200,120);
+	 document.getElementById("description").innerHTML="An acute angle is one of less than 90 degrees";
+	break;
+	case "rightangle":
+	 angle(50,50,50,200,200,200);
+	 document.getElementById("description").innerHTML="A right angle is two lines set at an angle of 90 degrees";
+	break;
+	case "acutetriangle":
+	 triangle(50,50,50,200,200,120);
+	 document.getElementById("description").innerHTML="Angles in an acute triangle are all less than 90 degrees";
+	break;
+	case "obtusetriangle":
+	 triangle(50,50,50,200,200,280);
+	 document.getElementById("description").innerHTML="An obtuse triangle has one >90 degree angle and two that are < 90 degrees";
+	break;
+	case "righttriangle":
+	 triangle(50,50,50,200,200,200);
+	 document.getElementById("description").innerHTML="A right triangle has one angle that is 90 degrees";
+	break;
+	case "isoscelestriangle":
+	 triangle(100,300,300,300,200,100);
+	 document.getElementById("description").innerHTML="An isosceles triangle has two angles set to the same degree (congruency) ";
+	break;
+	case "equiangulartriangle":
+	 triangle(100,300,300,300,200,200);
+	 document.getElementById("description").innerHTML="All angles are congruent (at 60 degrees) in an equiangular triangle";
+	break;
+	case "scalenetriangle":
+	 triangle(100,100,100,240,160,40);
+	 document.getElementById("description").innerHTML="All three angles are different in a scalene triangle";
+	break;
+	case "circle":
+	contex.beginPath();  
+	contex.arc(200, 200, 100, 0, Math.PI * 2, true);
+	contex.closePath();
+	contex.stroke();
+	document.getElementById("description").innerHTML="Circles are created with the Arc method - use Math.PI *2";
+	break;
+	case "arc":
+	contex.beginPath();  
+	contex.arc(200, 250, 100, 0, Math.PI, true);
+	contex.closePath();  
+	contex.stroke();
+	document.getElementById("description").innerHTML="Semicircles are created with the Arc method - use Math.PI";
+	break;
+	case "sine":
+	 for (i=0; i< 500; i++) {
+	  i2=(Math.sin(i * ((2 * Math.PI) / 500)) * 200 + 200);         
+	  contex.lineTo(i,i2);
+	contex.stroke();
+	 }
+	document.getElementById("description").innerHTML="The Sine Function"; 
+	break;
+	case "cosine":
+	 for (i=0; i< 500; i++) {
+	  i2=(Math.cos(i * ((2 * Math.PI) / 200)) * 200 + 200);       
+	   contex.lineTo(i,i2);
+	contex.stroke();
+	 }
+	document.getElementById("description").innerHTML="The Cosine Function"; 
+	break;  
+	default:
+	// nada
+	}  // end switch
+	} //function
+	function angle(mx,my,coord1x,coord1y,coord2x,coord2y) {
+	 contex.moveTo(mx,my);
+	 contex.lineTo(coord1x,coord1y);
+	 contex.lineTo(coord2x,coord2y);
+	 contex.stroke();
+	}
+	function triangle(mx,my,coord1x,coord1y,coord2x,coord2y) {
+	 contex.beginPath();
+	 contex.moveTo(mx,my);
+	 contex.lineTo(coord1x,coord1y);
+	 contex.lineTo(coord2x,coord2y);
+	 contex.closePath(); // the closePath method completes the triangle
+	 contex.stroke();
+	}
 </script>
 </body>
 </html>
