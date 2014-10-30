@@ -29,6 +29,7 @@
 		background-color: white;
 		border: 5px blue solid;
 	}
+	#desc{ font-family: Georgia; font-weight: 700; font-size: 18px; color: white; background-color: black; text-align: center;}
 </style>
 <script type="text/javascript">
 
@@ -42,11 +43,24 @@
 	<div class="canvas_wrapper">
 		<canvas id="canvas_1" width="400" height="300">try a different browser.</canvas>
 		<br /><br />
-		<p>Use the Left or Right arrows on your keyboard to scoll in either direction inside the frame.</p>
+		<p id="desc">Use the Left or Right arrows on your keyboard to scoll in either direction inside the frame.</p>
 		<br /><br />
 	</div>
 
 <script type="text/javascript">
+	var bkground = new Image(); //background images
+	var bkground_dx = 2; //how much to move the background image(s)
+	var bkground_x = 0; //x coordinate to slice background image
+	var foreground = new Image(); //stuff in the front
+	var foreground_dx = 5; //how much to move the foreground image(s)
+	var foreground_x = 0; //x coordinate to slice foreground image
+
+	canvas_1 = document.getElementById("canvas_1");
+	contex = canvas_1.getContext("2d");
+	bkground.src = "pic1";
+	foreground.src = "pic2";
+	setInterVal(draw, 10);
+
 
 </script>
 </body>
