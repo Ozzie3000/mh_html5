@@ -25,7 +25,7 @@
 		margin-left: 5%;
 	}
 	#canvas_1{
-		background-color: white;
+		background-color: blue;
 		border: 5px blue solid;
 	}
 	#desc{font-family: Georgia; font-weight: 700; font-size: 16px;}
@@ -40,7 +40,7 @@
 	<h1>colored waves</h1>
 	
 	<div class="canvas_wrapper">
-		<canvas id="canvas_1" width="800" height="500">Upgrade your browser</canvas>
+		<canvas id="canvas_1" width="800" height="600">Upgrade your browser</canvas>
 
 
 		<p id="desc">wavy colors</p>
@@ -53,12 +53,12 @@
 	my_canvas.width = my_canvas.width; //clears canvas
 	contex.strokeStyle='rgb(0,0,0)';
 	contex.lineWidth="2";
-	for (a=25; a< 200; a=(a+25)) {
+	for (a=0; a< 300; a=(a+20)) {
 		contex.beginPath();
 		for (i=0; i< 800; i=(i+10)) {
-		 i2=(Math.sin(i * ((2 * Math.PI) / 300)) * a + 200);         
+		 i2=(Math.sin(i * ((2 * Math.PI) / 300)) * a + 300);         
 		  contex.lineTo(i,i2);
-		 contex.strokeStyle='rgb(' + a + ',' + a/10 + ',' + a + ')'; 
+		 contex.strokeStyle='rgb(' + a + ',' + a/10 + ',' + a*4 + ')'; 
 		 contex.stroke();
 		 }
 		contex.closePath();
