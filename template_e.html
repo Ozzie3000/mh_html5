@@ -35,7 +35,21 @@
 
 
 <script type="text/javascript">
-
+	var my_canvas=document.getElementById("canvas1");
+	var cntx=my_canvas.getContext('2d');
+	my_canvas.width = my_canvas.width; //clears canvas
+	contex.strokeStyle='rgb(0,0,0)';
+	contex.lineWidth="2";
+	for (a=25; a< 200; a=(a+25)) {
+		contex.beginPath();
+		for (i=0; i< 800; i=(i+10)) {
+		 i2=(Math.sin(i * ((2 * Math.PI) / 300)) * a + 200);         
+		  contex.lineTo(i,i2);
+		 contex.strokeStyle='rgb(' + a + ',' + a/10 + ',' + a + ')'; 
+		 contex.stroke();
+		 }
+		contex.closePath();
+	}
 </script>
 </body>
 </html>
