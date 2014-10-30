@@ -26,7 +26,7 @@
 		margin-left: 5%;
 	}
 	#canvas_1{
-		background-color: red;
+		background-color: dddddd;
 		border: 5px blue solid;
 	}
 </style>
@@ -62,14 +62,14 @@
 	contex = canvas_1.getContext("2d");
 	sky.src = "http://www.rigel.org.uk/blog/megan/images/n1058ferguson_banner.jpg";
 	skyline.src = "http://www.thesupers.tv/images/city_nobg.png";
-	wagon.src = "wagonpic";
+	wagon.src = "http://a.deviantart.net/avatars/t/a/tardis-hugger.jpg?1";
 
 	setInterval(draw, 3000);
-	window.addEventListener("keydown", doKeyDown,true);
+	window.addEventListener("keydown", doKeyDown, true);
 
-	function rectang(x,y,w,h){
+	function rect(x,y,w,h){
 		contex.beginPath();
-		contex.rectangrect(x,y,w,h);
+		contex.rect(x,y,w,h);
 		contex.closePath();
 		contex.fill();
 		contex.stroke();
