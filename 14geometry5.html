@@ -41,11 +41,36 @@
 	<h1>Geometry</h1>
 	
 	<div class="canvas_wrapper">
-		<canvas id="canvas_1" width="800" height="500"></canvas>
+		<canvas id="canvas_1" width="800" height="500">Upgrade your browser</canvas>
 	</div>
 
 <script type="text/javascript">
-
+	var my_canvas = document.getElementById("canvas_1");
+	var contex = my_canvas.getContext("2d");
+	my_canvas.width = my_canvas.width;  //wipe canvas
+	contex.lineWidth = "3";
+	for (a=10; a<100; a=(a+10)){
+		b = a + (Math.random()*10);
+		c = a + (Math.random() *6);
+		d = a + (Math.random()*12);
+		contex.beginPath();
+		contex.moveTo(b+c,b+d);
+		contex.lineTo(b+c+5, b+d+5);
+		contex.lineTo(b+c+10, b+d);
+		contex.strokeStyle = "rgb(50,80,80)";
+		contex.stroke();
+		contex.closePath();
+	}
+	//background
+	contex.strokeStyle = "rgb(0,51,255)";
+	contex.beginPath();
+	contex.lineWidth = "4"
+	for(i=0; i<=800; i=(i+10)){
+		i2 = (Math.sin(i * ((2 * Math.PI) / 400)) * 50 + 300);
+		contex.lineTo(i,i2);
+		contex.stroke();
+	}
+	contex.closePath();
 </script>
 </body>
 </html>
