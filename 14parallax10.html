@@ -61,7 +61,40 @@
 	foreground.src = "pic2";
 	setInterVal(draw, 10);
 
+	window.addEventListener('keydown', doKeyDown,true);
 
+	function doKeyDown(e){
+		switch(e.keyCode){
+			case 37: /*Left arrow key number */
+				if ((bkground_x + bkground_dx) > 2){
+					bkground_x -= bkground_dx;
+				}else{
+					bkground_x = 400;
+				}
+				if ((foreground_x + foreground_dx) > 5){
+					foreground_x -= foreground_dx;
+				}else{
+					foreground_x = 398;
+				}
+			break;
+			case 39:  /*right arrow key number */
+				if ((bkground_x + bkground_dx) < (400 - bkground_dx)){
+					bkground_x += bkground_dx;
+				}else{
+					bkground_x = 0;
+				}
+				if ((foreground_x + foreground_dx) < (400 - foreground_dx)){
+					foreground_x += foreground_dx;
+				}else{
+					foreground_x = 0;
+				}
+				break;
+		} //end of switch
+	} //end of function doKeyDown
+
+	function draw(){
+		
+	}
 </script>
 </body>
 </html>
