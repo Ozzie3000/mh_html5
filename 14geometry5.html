@@ -61,12 +61,12 @@
 		contex.stroke();
 		contex.closePath();
 	}
-	//background
+	//background.... ocean maybe?
 	contex.strokeStyle = "rgb(0,51,255)";
 	contex.beginPath();
 	contex.lineWidth = "4"
 	for(i=0; i<=800; i=(i+10)){
-		i2 = (Math.sin(i * ((2 * Math.PI) / 400)) * 50 + 300);
+		i2 = (Math.sin(i * ((2 * Math.PI) / 400)) * 50 + 400);
 		contex.lineTo(i,i2);
 		contex.stroke();
 	}
