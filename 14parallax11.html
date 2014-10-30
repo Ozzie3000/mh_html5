@@ -60,16 +60,16 @@
 
 	canvas_1 = document.getElementById("canvas_1");
 	contex = canvas_1.getContext("2d");
-	sky.src = "skypic";
-	skyline.src = "skylinepic";
+	sky.src = "http://www.rigel.org.uk/blog/megan/images/n1058ferguson_banner.jpg";
+	skyline.src = "http://www.thesupers.tv/images/city_nobg.png";
 	wagon.src = "wagonpic";
 
-	setInterval(draw, 10);
+	setInterval(draw, 3000);
 	window.addEventListener("keydown", doKeyDown,true);
 
 	function rectang(x,y,w,h){
 		contex.beginPath();
-		contex.rectang(x,y,w,h);
+		contex.rectangrect(x,y,w,h);
 		contex.closePath();
 		contex.fill();
 		contex.stroke();
@@ -116,7 +116,7 @@
 
 	function draw(){
 		contex.fillStyle = "black";
-		rectang(0,0,w,h);
+		rect(0,0,w,h);
 		contex.drawImage(sky, sky_x, 0, 300, 300, 0, 0, 400, 400);
 		contex.drawImage(skyline, skyline_x, 0, 300, 300, 0, 0, 400, 400);
 		contex.drawImage(wagon, wagonslice, 0, 45, 39, wagon_x, wagon_y, 32, 32);
