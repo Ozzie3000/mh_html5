@@ -102,9 +102,19 @@
 				}
 				if ((skyline_x + skyline_dx) < (400 - skyline_dx)){
 					skyline_x += skyline_dx;
+				}else{
+					skyline_x = 0;
 				}
-		}
-	}
+				if (wagonslice < 90){
+					wagonslice += 45;
+				}else{
+					wagonslice = 0;
+				}
+				break;
+		} //end of switch
+	}  // end of doKeydown func
+
+	
 </script>
 </body>
 </html>
