@@ -78,7 +78,7 @@
 	function doKeyDown(e){
 		switch (e.keyCode){
 			case 37:  /* code for left arrow */
-				if ((sky_x _ sky_dx) > 2){
+				if ((sky_x + sky_dx) > 2){
 					sky_x -= sky_dx;
 				}else{
 					sky_x = 400;
