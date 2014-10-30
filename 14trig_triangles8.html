@@ -58,30 +58,30 @@
 	// fill in a couple of triangles
 	triangle(0,150,75,75,150,150,0,150,255,0,255);
 	triangle(225,225,300,300,375,225,225,225,0,255,255);
-	
+
 	function makelines(mx,my,coord1x,coord1y,coord2x,coord2y,coord3x,coord3y,coord4x,coord4y,coord5x,coord5y) {
-		cntx.moveTo(mx,my); // move to
-		cntx.lineTo(coord1x,coord1y); // draw one line
-		cntx.lineTo(coord2x,coord2y); // draw one line
-		cntx.lineTo(coord3x,coord3y); // draw one line
-		cntx.lineTo(coord4x,coord4y); // draw one line 
-		cntx.lineTo(coord5x,coord5y); // draw one line
-		cntx.stroke();
+		contex.moveTo(mx,my); // move to
+		contex.lineTo(coord1x,coord1y); // draw one line
+		contex.lineTo(coord2x,coord2y); // draw one line
+		contex.lineTo(coord3x,coord3y); // draw one line
+		contex.lineTo(coord4x,coord4y); // draw one line 
+		contex.lineTo(coord5x,coord5y); // draw one line
+		contex.stroke();
 	}
 	function straightline(mx,my,coord1x,coord1y) {
-		cntx.moveTo(mx,my); // move to
-		cntx.lineTo(coord1x,coord1y); // draw one line
-		cntx.stroke();
+		contex.moveTo(mx,my); // move to
+		contex.lineTo(coord1x,coord1y); // draw one line
+		contex.stroke();
 	}
 	function triangle(mx,my,coord1x,coord1y,coord2x,coord2y,coord3x,coord3y,r,g,b) {
-		cntx.beginPath();
-		cntx.moveTo(mx,my);
-		cntx.lineTo(coord1x,coord1y);
-		cntx.lineTo(coord2x,coord2y);
-		cntx.lineTo(coord2y,coord3x);
-		cntx.closePath();
-		cntx.fillStyle='rgb(' + r + ',' + g + ',' + b + ')'; 
-		cntx.fill();
+		contex.beginPath();
+		contex.moveTo(mx,my);
+		contex.lineTo(coord1x,coord1y);
+		contex.lineTo(coord2x,coord2y);
+		contex.lineTo(coord2y,coord3x);
+		contex.closePath();
+		contex.fillStyle='rgb(' + r + ',' + g + ',' + b + ')'; 
+		contex.fill();
 	}
 </script>
 </body>
