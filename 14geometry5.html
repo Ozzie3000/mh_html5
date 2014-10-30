@@ -62,11 +62,12 @@
 		contex.closePath();
 	}
 	//background.... ocean maybe?
+	//num before Pi freq, /num amplitude, *num amplitude, +num up or down
 	contex.strokeStyle = "rgb(0,51,255)";
 	contex.beginPath();
 	contex.lineWidth = "4"
 	for(i=0; i<=800; i=(i+10)){
-		i2 = (Math.sin(i * ((3 * Math.PI) / 400)) * 20 + 400);
+		i2 = (Math.sin(i * ((3 * Math.PI) / 300)) * 20 + 400);
 		contex.lineTo(i,i2);
 		contex.stroke();
 	}
