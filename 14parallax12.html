@@ -29,17 +29,26 @@
 		background-color: dddddd;
 		border: 5px blue solid;
 	}
+	.rere{
+		padding: 10px; 
+		font-family: Georgia, sans-serif; 
+		font-size: 16px; 
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	.rere:hover{ background: blue; color: red; cursor: crosshair;}
 </style>
 <script type="text/javascript">
 </script>
 </head>
 <body>
-	<input type="button" value="Refreshness" onclick="location.reload()" />
-	<br />
+	<input type="button" class="rere" value="Refreshness" onclick="location.reload()" />
+	
 	<h1>Parallax 3</h1>
 	
 	<div class="canvas_wrapper">
-		<canvas id="canvas_1" width="600" height="700">Try a different browser</canvas>
+		<canvas id="canvas_1" width="600" height="700" title="3 different scrolling pics">Try a different browser</canvas>
 		<br /><br />
 	</div>
 
