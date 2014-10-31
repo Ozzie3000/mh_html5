@@ -22,8 +22,8 @@
 	h1{ color: white; font-family: sans-serif; text-align: center; font-size: 24px;}
 
 	.canvas_wrapper{
-		margin-top: 5%;
-		margin-left: 5%;
+		display: table;
+		margin: 3% auto 0 auto;
 	}
 	#canvas_1{
 		background-color: dddddd;
@@ -35,36 +35,41 @@
 </head>
 <body>
 	<input type="button" value="Refreshness" onclick="location.reload()" />
-	<br /><br />
-	<h1>Parallax 2</h1>
+	<br />
+	<h1>Parallax 3</h1>
 	
 	<div class="canvas_wrapper">
-		<canvas id="canvas_1" width="400" height="400">Try a different browser</canvas>
+		<canvas id="canvas_1" width="600" height="700">Try a different browser</canvas>
 		<br /><br />
 	</div>
 
 
 <script type="text/javascript">
-	var h = 400; //canvas height we set up there
+	var h = 700; //canvas height we set up there
 	var w = 400; //canvas width we set up there
 	var sky = new Image(); //sky portion
-	var sky_dx = 2; //amount to scroll to help with parallax effect
-	var sky_x = 0; // x-coord to slice sky image
+	var sky_dx = 4; //amount to scroll to help with parallax effect
+	var sky_x = 960; // x-coord to slice sky image
 	var skyline = new Image(); //skyline image
-	var skyline_dx = 5; //amount to move skyline image
-	var skyline_x = 0; //x-coord to slice skyline image
+	var skyline_dx = 7; //amount to move skyline image
+	var skyline_x = 560; //x-coord to slice skyline image
 	var wagon = new Image(); //the wagon
-	var wagon_x = 150; // x-coord for wagon
-	var wagon_y = 250; // y-coord for wagon
+	var wagon_x = 0; // x-coord for wagon
+	var wagon_y = 550; // y-coord for wagon
 	var wagonslice = 0; // x-coord to slice wagon image
 
 	canvas_1 = document.getElementById("canvas_1");
 	contex = canvas_1.getContext("2d");
-	sky.src = "http://fc06.deviantart.net/fs71/f/2010/186/a/6/Night_Sky_by_Skystalker.png";
-	skyline.src = "http://www.thesupers.tv/images/city_nobg.png";
+	/*
+	sky.src = "http://173.236.19.210/wp-content/uploads/2013/12/ipHeader.jpg";
+	skyline.src = "http://www.wildlifewilderness.com/img/fi/wolf.jpg";
 	wagon.src = "http://a.deviantart.net/avatars/t/a/tardis-hugger.jpg?1";
+ */
+ 	sky.src = "../pictures/mountains.jpg";
+	skyline.src = "../pictures/wolf.jpg";
+	wagon.src = "http://static.squarespace.com/static/52e6894de4b07d33024af993/t/5307eaf1e4b0efed6704c6c2/1392837200273/fcs%20grass%20border.png";
 
-	setInterval(draw, 10);
+	setInterval(draw, 1);
 	window.addEventListener("keydown", doKeyDown, true);
 
 	function rect(x,y,w,h){
@@ -81,32 +86,32 @@
 				if ((sky_x + sky_dx) > 2){
 					sky_x -= sky_dx;
 				}else{
-					sky_x = 400;
+					sky_x = 960;
 				}
 				if ((skyline_x + skyline_dx) > 5){
 					skyline_x -= skyline_dx;
 				}else{
-					skyline_x = 398;
+					skyline_x = 960;
 				}
 				if (wagonslice > 0){
-					wagonslice -= 45;
+					wagonslice -= 120;
 				}else {
-					wagonslice = 90;
+					wagonslice = 240;
 				}
 				break;
 			case 39: /* code for right arrow */
-				if ((sky_x + sky_dx) < (400 - sky_dx)){
+				if ((sky_x + sky_dx) < (960 - sky_dx)){
 					sky_x += sky_dx;
 				}else{
 					sky_x = 0;
 				}
-				if ((skyline_x + skyline_dx) < (400 - skyline_dx)){
+				if ((skyline_x + skyline_dx) < (960 - skyline_dx)){
 					skyline_x += skyline_dx;
 				}else{
 					skyline_x = 0;
 				}
-				if (wagonslice < 90){
-					wagonslice += 45;
+				if (wagonslice < 240){
+					wagonslice += 120;
 				}else{
 					wagonslice = 0;
 				}
@@ -117,9 +122,9 @@
 	function draw(){
 		contex.fillStyle = "black";
 		rect(0,0,w,h);
-		contex.drawImage(sky, sky_x, 0, 300, 300, 0, 0, 400, 400);
-		contex.drawImage(skyline, skyline_x, 0, 300, 300, 0, 200, 400, 400);
-		contex.drawImage(wagon, wagonslice, 0, 45, 39, wagon_x, wagon_y, 32, 32);
+		contex.drawImage(sky, sky_x, 0, 1920, 250, 0, 0, 1920, 250);
+		contex.drawImage(skyline, skyline_x, 0, 1920, 500, 0, 250, 1920, 500);
+		contex.drawImage(wagon, wagonslice, 0, 960, 151, 0, 555, 960, 151);
 	}
 </script>
 </body>
